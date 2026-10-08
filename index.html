@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kodland Tutor Training — Choose your language</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Inter:wght@400;500;600;700;800&family=Nunito:wght@700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+.idx-langs{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:0 0 30px}
+.idx-lang-btn{background:var(--surface);border:2px solid var(--border);color:var(--text);border-radius:999px;padding:8px 16px;font-weight:700;font-size:13px;cursor:pointer;font-family:inherit}
+.idx-lang-btn.active{background:var(--blue);color:#fff;border-color:var(--blue)}
+.idx-panel{display:none}
+.idx-panel.active{display:block}
+.idx-prompt{text-align:center;font-weight:700;font-size:14.5px;color:var(--onbg);margin:0 0 14px}
+a.start-btn{display:inline-block;text-decoration:none}
+</style>
+</head>
+<body>
+<div class="hero">
+  <div class="hero-inner">
+    <p class="idx-prompt">🌐 Please select your native language before starting the training.</p>
+    <div class="idx-langs" id="idxLangs">
+      <button class="idx-lang-btn active" data-lang="en" onclick="showLang('en')">🇬🇧 English</button>
+      <button class="idx-lang-btn" data-lang="ru" onclick="showLang('ru')">🇷🇺 Русский</button>
+      <button class="idx-lang-btn" data-lang="es" onclick="showLang('es')">🇪🇸 Español</button>
+      <button class="idx-lang-btn" data-lang="pt" onclick="showLang('pt')">🇧🇷 Português (Brasil)</button>
+      <button class="idx-lang-btn" data-lang="it" onclick="showLang('it')">🇮🇹 Italiano</button>
+      <button class="idx-lang-btn" data-lang="pl" onclick="showLang('pl')">🇵🇱 Polski</button>
+      <button class="idx-lang-btn" data-lang="tr" onclick="showLang('tr')">🇹🇷 Türkçe</button>
+      <button class="idx-lang-btn" data-lang="id" onclick="showLang('id')">🇮🇩 Bahasa Indonesia</button>
+      <button class="idx-lang-btn" data-lang="ar" onclick="showLang('ar')">🇸🇦 العربية</button>
+    </div>
+    <div class="idx-panel active" data-panel="en">
+      <div class="eyebrow">💸 Tutor Training Program</div>
+      <h1>Understanding <span class="h-pill">Refunds</span></h1>
+      <p>Behind every refund request there's a child who was building something and stopped — and you are almost always the first person who could have noticed it. This training is about how well you observe, and how fast you act.</p>
+      <div class="hero-reasons">
+        <div class="hr-item"><span class="hr-ic">👀</span><span class="hr-txt">Learn exactly what to watch for, during the lesson and between lessons.</span></div>
+        <div class="hr-item"><span class="hr-ic">🖥️</span><span class="hr-txt">Practice reading a group's Progress view in a hands-on BO simulation.</span></div>
+        <div class="hr-item"><span class="hr-ic">🧭</span><span class="hr-txt">Know exactly what's yours to fix, what's yours to report, and who to tell.</span></div>
+      </div>
+      <p>Work through 7 modules and a final checklist, then head to the DST. Each module needs 70%+ to unlock the next.</p>
+      <a class="start-btn" href="en.html?start=1">🚀 Start Training</a>
+    </div>
+    <div class="idx-panel" data-panel="ru">
+      <div class="eyebrow">💸 Программа обучения преподавателей</div>
+      <h1>Разбираемся с <span class="h-pill">возвратами</span></h1>
+      <p>За каждым запросом на возврат стоит ребёнок, который что-то создавал, а потом остановился, и вы почти всегда первым могли это заметить. Это обучение о том, насколько внимательно вы наблюдаете и насколько быстро действуете.</p>
+      <div class="hero-reasons">
+        <div class="hr-item"><span class="hr-ic">👀</span><span class="hr-txt">Узнайте, на что именно смотреть на уроке и между уроками.</span></div>
+        <div class="hr-item"><span class="hr-ic">🖥️</span><span class="hr-txt">Потренируйтесь читать экран «Прогресс» группы в практической симуляции BO.</span></div>
+        <div class="hr-item"><span class="hr-ic">🧭</span><span class="hr-txt">Поймите, что вы исправляете сами, о чём сообщаете и кого ставите в известность.</span></div>
+      </div>
+      <p>Пройдите 7 модулей и итоговый чек-лист, а затем выполните DST. Чтобы открыть следующий модуль, нужно набрать 70% и больше.</p>
+      <a class="start-btn" href="ru.html?start=1">🚀 Начать обучение</a>
+    </div>
+    <div class="idx-panel" data-panel="es">
+      <div class="eyebrow">💸 Programa de capacitación para tutores</div>
+      <h1>Comprender los <span class="h-pill">reembolsos</span></h1>
+      <p>Detrás de cada solicitud de reembolso hay un niño que estaba construyendo algo y se detuvo — y tú casi siempre eres la primera persona que podría haberlo notado. Esta capacitación trata sobre qué tan bien observas y qué tan rápido actúas.</p>
+      <div class="hero-reasons">
+        <div class="hr-item"><span class="hr-ic">👀</span><span class="hr-txt">Aprende exactamente qué observar, durante la clase y entre clases.</span></div>
+        <div class="hr-item"><span class="hr-ic">🖥️</span><span class="hr-txt">Practica cómo leer la vista de Progreso de un grupo en una simulación práctica del BO.</span></div>
+        <div class="hr-item"><span class="hr-ic">🧭</span><span class="hr-txt">Ten claro qué te toca resolver, qué te toca reportar y a quién avisar.</span></div>
+      </div>
+      <p>Completa los 7 módulos y la lista de verificación final, y luego ve al DST. Cada módulo requiere 70% o más para desbloquear el siguiente.</p>
+      <a class="start-btn" href="es.html?start=1">🚀 Comenzar la capacitación</a>
+    </div>
+    <div class="idx-panel" data-panel="pt">
+      <div class="eyebrow">💸 Programa de treinamento para tutores</div>
+      <h1>Entendendo os <span class="h-pill">reembolsos</span></h1>
+      <p>Por trás de cada pedido de reembolso existe uma criança que estava construindo algo e parou — e você quase sempre é a primeira pessoa que poderia ter percebido. Este treinamento é sobre o quanto você observa bem e o quão rápido você age.</p>
+      <div class="hero-reasons">
+        <div class="hr-item"><span class="hr-ic">👀</span><span class="hr-txt">Aprenda exatamente o que observar, durante a aula e entre uma aula e outra.</span></div>
+        <div class="hr-item"><span class="hr-ic">🖥️</span><span class="hr-txt">Pratique a leitura da tela de Progresso de uma turma em uma simulação prática do BO.</span></div>
+        <div class="hr-item"><span class="hr-ic">🧭</span><span class="hr-txt">Saiba exatamente o que cabe a você resolver, o que cabe a você reportar e a quem avisar.</span></div>
+      </div>
+      <p>Complete os 7 módulos e o checklist final, depois siga para o DST. Cada módulo exige 70% ou mais para liberar o próximo.</p>
+      <a class="start-btn" href="pt.html?start=1">🚀 Começar o treinamento</a>
+    </div>
+    <div class="idx-panel" data-panel="it">
+      <div class="eyebrow">💸 Programma di formazione per tutor</div>
+      <h1>Capire i <span class="h-pill">rimborsi</span></h1>
+      <p>Dietro ogni richiesta di rimborso c’è un bambino che stava costruendo qualcosa e si è fermato — e quasi sempre tu sei la prima persona che avrebbe potuto accorgersene. Questa formazione riguarda quanto bene osservi e quanto in fretta agisci.</p>
+      <div class="hero-reasons">
+        <div class="hr-item"><span class="hr-ic">👀</span><span class="hr-txt">Impara esattamente a cosa fare attenzione, durante la lezione e tra una lezione e l’altra.</span></div>
+        <div class="hr-item"><span class="hr-ic">🖥️</span><span class="hr-txt">Esercitati a leggere la vista Progressi di un gruppo in una simulazione pratica del BO.</span></div>
+        <div class="hr-item"><span class="hr-ic">🧭</span><span class="hr-txt">Sappi con precisione cosa spetta a te sistemare, cosa spetta a te segnalare e a chi dirlo.</span></div>
+      </div>
+      <p>Completa 7 moduli e una checklist finale, poi passa al DST. Ogni modulo richiede almeno il 70% per sbloccare il successivo.</p>
+      <a class="start-btn" href="it.html?start=1">🚀 Inizia la formazione</a>
+    </div>
+    <div class="idx-panel" data-panel="pl">
+      <div class="eyebrow">💸 Program szkoleniowy dla korepetytorów</div>
+      <h1>Zrozumieć <span class="h-pill">zwroty środków</span></h1>
+      <p>Za każdą prośbą o zwrot środków stoi dziecko, które coś budowało i przestało — a ty niemal zawsze jesteś pierwszą osobą, która mogła to zauważyć. To szkolenie dotyczy tego, jak uważnie obserwujesz i jak szybko działasz.</p>
+      <div class="hero-reasons">
+        <div class="hr-item"><span class="hr-ic">👀</span><span class="hr-txt">Dowiedz się dokładnie, na co zwracać uwagę — w trakcie lekcji i między lekcjami.</span></div>
+        <div class="hr-item"><span class="hr-ic">🖥️</span><span class="hr-txt">Poćwicz czytanie widoku Postępy grupy w praktycznej symulacji BO.</span></div>
+        <div class="hr-item"><span class="hr-ic">🧭</span><span class="hr-txt">Wiedz dokładnie, co należy do ciebie, co trzeba zgłosić i komu.</span></div>
+      </div>
+      <p>Przejdź przez 7 modułów i końcową listę kontrolną, a potem przejdź do DST. Każdy moduł wymaga co najmniej 70%, aby odblokować kolejny.</p>
+      <a class="start-btn" href="pl.html?start=1">🚀 Rozpocznij szkolenie</a>
+    </div>
+    <div class="idx-panel" data-panel="tr">
+      <div class="eyebrow">💸 Eğitmen Eğitim Programı</div>
+      <h1><span class="h-pill">İadeleri</span> Anlamak</h1>
+      <p>Her iade talebinin arkasında bir şey inşa ederken duran bir çocuk vardır — ve bunu fark edebilecek ilk kişi neredeyse her zaman sensin. Bu eğitim, ne kadar iyi gözlemlediğin ve ne kadar hızlı harekete geçtiğinle ilgili.</p>
+      <div class="hero-reasons">
+        <div class="hr-item"><span class="hr-ic">👀</span><span class="hr-txt">Ders sırasında ve dersler arasında tam olarak neye dikkat etmen gerektiğini öğren.</span></div>
+        <div class="hr-item"><span class="hr-ic">🖥️</span><span class="hr-txt">Uygulamalı bir BO simülasyonunda bir grubun İlerleme ekranını okumayı dene.</span></div>
+        <div class="hr-item"><span class="hr-ic">🧭</span><span class="hr-txt">Neyi düzeltmenin, neyi bildirmenin ve kime haber vermenin sana düştüğünü net olarak bil.</span></div>
+      </div>
+      <p>7 modülü ve son kontrol listesini tamamla, ardından DST’ye geç. Her modülde bir sonrakinin kilidini açmak için en az %70 gerekir.</p>
+      <a class="start-btn" href="tr.html?start=1">🚀 Eğitime Başla</a>
+    </div>
+    <div class="idx-panel" data-panel="id">
+      <div class="eyebrow">💸 Program Pelatihan Tutor</div>
+      <h1>Memahami <span class="h-pill">Pengembalian Dana</span></h1>
+      <p>Di balik setiap permintaan pengembalian dana (refund), ada seorang anak yang sedang membangun sesuatu lalu berhenti — dan kamu hampir selalu menjadi orang pertama yang sebenarnya bisa menyadarinya. Pelatihan ini membahas seberapa baik kamu mengamati, dan seberapa cepat kamu bertindak.</p>
+      <div class="hero-reasons">
+        <div class="hr-item"><span class="hr-ic">👀</span><span class="hr-txt">Pelajari dengan tepat apa yang perlu kamu perhatikan, selama pelajaran dan di antara pelajaran.</span></div>
+        <div class="hr-item"><span class="hr-ic">🖥️</span><span class="hr-txt">Berlatih membaca tampilan Progres sebuah grup dalam simulasi BO secara langsung.</span></div>
+        <div class="hr-item"><span class="hr-ic">🧭</span><span class="hr-txt">Pahami dengan jelas apa yang harus kamu perbaiki, apa yang harus kamu laporkan, dan kepada siapa.</span></div>
+      </div>
+      <p>Selesaikan 7 modul dan daftar periksa akhir, lalu lanjutkan ke DST. Setiap modul membutuhkan nilai 70%+ untuk membuka modul berikutnya.</p>
+      <a class="start-btn" href="id.html?start=1">🚀 Mulai Pelatihan</a>
+    </div>
+    <div class="idx-panel" data-panel="ar" dir="rtl">
+      <div class="eyebrow">💸 برنامج تدريب المعلمين</div>
+      <h1>فهم <span class="h-pill">استرداد المبالغ</span></h1>
+      <p>خلف كل طلب لاسترداد المبلغ طفلٌ كان يبني شيئًا ثم توقّف — وأنت في الغالب أول شخص كان بإمكانه ملاحظة ذلك. يدور هذا التدريب حول مدى دقة ملاحظتك، ومدى سرعة تصرّفك.</p>
+      <div class="hero-reasons">
+        <div class="hr-item"><span class="hr-ic">👀</span><span class="hr-txt">تعلّم بالضبط ما الذي يجب أن تنتبه إليه، أثناء الحصة وبين الحصص.</span></div>
+        <div class="hr-item"><span class="hr-ic">🖥️</span><span class="hr-txt">تدرّب على قراءة عرض التقدّم لمجموعة ما في محاكاة عملية لـ BO.</span></div>
+        <div class="hr-item"><span class="hr-ic">🧭</span><span class="hr-txt">اعرف بالضبط ما عليك إصلاحه، وما عليك الإبلاغ عنه، ومن عليك إبلاغه.</span></div>
+      </div>
+      <p>أكمل 7 وحدات وقائمة تحقق نهائية، ثم انتقل إلى DST. تحتاج كل وحدة إلى 70% أو أكثر لفتح الوحدة التالية.</p>
+      <a class="start-btn" href="ar.html?start=1">🚀 ابدأ التدريب</a>
+    </div>
+  </div>
+</div>
+<script>
+function showLang(l){
+  document.querySelectorAll('.idx-lang-btn').forEach(function(b){ b.classList.toggle('active', b.getAttribute('data-lang')===l); });
+  document.querySelectorAll('.idx-panel').forEach(function(p){ p.classList.toggle('active', p.getAttribute('data-panel')===l); });
+  document.documentElement.lang=l;
+}
+(function(){
+  try{ var t=localStorage.getItem('kl-rf-theme'); if(t) document.documentElement.setAttribute('data-theme',t); }catch(e){}
+  var nav=(navigator.language||'en').slice(0,2);
+  var saved=null; try{ saved=localStorage.getItem('kl-rf-lang'); }catch(e){}
+  var pick=saved||nav;
+  if(['en','ru','es','pt','it','pl','tr','id','ar'].indexOf(pick)>-1) showLang(pick);
+})();
+</script>
+</body>
+</html>

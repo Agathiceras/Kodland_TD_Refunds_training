@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Refunds Training — Kodland Tutor Training</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Inter:wght@400;500;600;700;800&family=Nunito:wght@700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<!-- HOME -->
+<div id="screen-home" class="screen active">
+  <nav class="nav">
+    <a class="logo" href="#" onclick="goHome();return false;">
+      <span class="logo-mark">kodland</span>
+      <span class="logo-div"></span>
+      <span class="logo-sub" data-i18n="logoSub">Tutor Development Department</span>
+    </a>
+    <div class="nav-r">
+      <div class="lang-wrap">
+        <button class="lang-btn" id="langBtn" onclick="toggleLang(event)">🌐 <span style="font-size:10px">▾</span></button>
+        <div class="lang-menu" id="langMenu">
+          <div class="lang-item" data-lang="en" onclick="setLang('en')">🇬🇧 English</div>
+          <div class="lang-item" data-lang="ru" onclick="setLang('ru')">🇷🇺 Русский</div>
+          <div class="lang-item" data-lang="es" onclick="setLang('es')">🇪🇸 Español</div>
+          <div class="lang-item" data-lang="pt" onclick="setLang('pt')">🇧🇷 Português (Brasil)</div>
+          <div class="lang-item" data-lang="it" onclick="setLang('it')">🇮🇹 Italiano</div>
+          <div class="lang-item" data-lang="pl" onclick="setLang('pl')">🇵🇱 Polski</div>
+          <div class="lang-item" data-lang="tr" onclick="setLang('tr')">🇹🇷 Türkçe</div>
+          <div class="lang-item" data-lang="id" onclick="setLang('id')">🇮🇩 Bahasa Indonesia</div>
+          <div class="lang-item" data-lang="ar" onclick="setLang('ar')">🇸🇦 العربية</div>
+        </div>
+      </div>
+      <button class="tbtn" onclick="toggleTheme()">🌓</button>
+    </div>
+  </nav>
+  <div class="hero">
+    <div class="hero-inner">
+      <div class="eyebrow" data-i18n="heroEyebrow"></div>
+      <h1 data-i18n-html="heroTitle"></h1>
+      <p data-i18n="heroIntro"></p>
+      <div class="hero-reasons">
+        <div class="hr-item"><span class="hr-ic">👀</span><span class="hr-txt" data-i18n="heroR1"></span></div>
+        <div class="hr-item"><span class="hr-ic">🖥️</span><span class="hr-txt" data-i18n="heroR2"></span></div>
+        <div class="hr-item"><span class="hr-ic">🧭</span><span class="hr-txt" data-i18n="heroR3"></span></div>
+      </div>
+      <p data-i18n="heroWork"></p>
+      <button class="start-btn" data-i18n="startBtn" onclick="goDashboard()"></button>
+    </div>
+  </div>
+</div>
+
+<!-- DASHBOARD -->
+<div id="screen-path" class="screen">
+  <nav class="nav">
+    <a class="logo" href="#" onclick="goHome();return false;">
+      <span class="logo-mark">kodland</span>
+      <span class="logo-div"></span>
+      <span class="logo-sub" data-i18n="logoSub"></span>
+    </a>
+    <div class="nav-r">
+      <span id="ntag" style="font-size:13px;color:var(--text-muted);font-weight:700;display:none"></span>
+      <button class="tbtn" onclick="devUnlockAll()" data-i18n-title="devTitle" title="">🔓</button>
+      <button class="tbtn" onclick="toggleTheme()">🌓</button>
+    </div>
+  </nav>
+  <div class="msec">
+    <div class="slbl" data-i18n="pathLabel"></div>
+    <div class="grid" id="mgrid"></div>
+  </div>
+</div>
+
+<!-- CONTENT -->
+<div id="screen-content" class="screen">
+  <nav class="nav">
+    <a class="logo" href="#" onclick="goHome();return false;">
+      <span class="logo-mark">kodland</span>
+      <span class="logo-div"></span>
+      <span class="logo-sub" data-i18n="logoSub"></span>
+    </a>
+    <div class="nav-r">
+      <button class="tbtn" onclick="goDashboard()" data-i18n-title="backToPath" title="">🏠</button>
+      <button class="tbtn" onclick="toggleTheme()">🌓</button>
+    </div>
+  </nav>
+  <div class="cbody" id="contentBody"></div>
+</div>
+
+<!-- RESULTS -->
+<div id="screen-results" class="screen">
+  <nav class="nav">
+    <a class="logo" href="#" onclick="goHome();return false;">
+      <span class="logo-mark">kodland</span><span class="logo-div"></span><span class="logo-sub" data-i18n="logoSub"></span>
+    </a>
+    <div class="nav-r"><button class="tbtn" onclick="toggleTheme()">🌓</button></div>
+  </nav>
+  <div class="rbody" id="resultsBody"></div>
+</div>
+
+<script src="assets/content-ru.js"></script>
+<script src="assets/engine.js"></script>
+</body>
+</html>
