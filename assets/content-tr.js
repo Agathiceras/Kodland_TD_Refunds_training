@@ -28,7 +28,7 @@ const CONTENT = {
     startCheck:'▶ Modül kontrolünü başlat',
     toExam:'▶ Final Sınavına geç',
     doneBack:'✓ Tamam — yola dön',
-    ixBadge:'📋 Modül kontrolü — bir sonraki modül için %70',
+    ixBadge:'📋 Modül değerlendirmesi — sonraki modülün kilidini açmak için en az %70 başarı gerekiyor.',
     ixItemBadge:'📋 Modül kontrolü — soru {i} / {n}',
     scoreSoFar:'Şu ana kadarki puan: {c} / {t}',
     continue:'Devam →',
@@ -62,8 +62,8 @@ const CONTENT = {
  desc:'Bir iadenin çocuğun gözünden nasıl göründüğü, onu ilk fark edebilecek kişinin neden sen olduğun ve bunun hangi kısmının sana ait olduğu.',
  obj:'Bir iadenin çocuğun gözünden nasıl göründüğünü, onu ilk fark edebilecek kişinin neden sen olduğunu ve bunun hangi kısmının sana ait olduğunu anlamak.',
  sections:[
-  {t:'📋 Burada belirli bir nedenle bulunuyorsun — onu hemen bul', html:`
-   <div class="card"><p>Aşağıda bu eğitimin sana atanmış olabileceği nedenleri bulacaksın. Burada yalnızca dersle ilgili nedenlerle talep edilen iadeleri ele alıyoruz — bunları yönetmene yardımcı olabileceğimiz durumlar; yalnızca ileride önlemek için değil, iadeyi kurtarmak için de. Yine de eğitimin tamamını bitirmek sana daha geniş bir bakış açısı kazandıracak ve başka nedenlerden kaynaklanan iadeleri önlemene de yardımcı olacak.</p></div>
+  {t:'📋 Bu eğitime neden atandığını hemen öğren', html:`
+   <div class="card"><p>Aşağıda bu eğitimin sana atanmış olabileceği nedenleri bulacaksın. Bu eğitimde yalnızca dersle ilgili nedenlerle yapılan iade taleplerini ele alıyoruz. Bu durumlarda hem mevcut iade talebini önlemek hem de gelecekte benzer durumların yaşanmasını engellemek için harekete geçebiliriz. Yine de eğitimin tamamını bitirmek sana daha geniş bir bakış açısı kazandıracak ve başka nedenlerden kaynaklanan iadeleri önlemene de yardımcı olacak.</p></div>
    <div class="card"><div class="tbl-wrap"><table>
    <tr><th>🚩 Bildirilen neden</th><th>👀 Genellikle nasıl görünür</th><th>📍 Bu eğitim nasıl yardımcı olur</th></tr>
    <tr><td><strong>Programlamaya / Kodland kurslarına ilgi yok</strong></td><td>Sıkılmış, işi sadece yapmış olmak için yapıyor, “hepsi bu mu?”, belirli bir şeye gerçek bir itirazı yok</td><td>Modül 5.2 · Modül 3.6</td></tr>
@@ -73,15 +73,15 @@ const CONTENT = {
    </table></div></div>
   `},
   {t:'💔 Bir iade, öğrenmeyi bırakan bir çocuktur', html:`
-   <div class="card"><p>Her iade talebinin arkasında bir şey inşa ederken duran bir çocuk vardır. Küçülen bir grup. Bize güvenen ve devam etmeye değmeyeceğimize karar veren bir aile.</p>
+   <div class="card"><p>Her iade talebinin arkasında bir şey inşa ederken duran bir çocuk vardır. Küçülen bir grup. Bize güvenen, ancak kursumuza devam etmeye değmeyeceğine karar veren bir aile.</p>
    <p>Bu eğitim tam olarak bununla ilgili. Bir paneldeki sayıyla değil — gruplarından birinde, şu anda uzaklaşan ve bunu nasıl söyleyeceğini bilmeyen belirli bir çocukla.</p></div>
    <img src="Images/Image_1.png" alt="" style="display:block;width:100%;border-radius:var(--r);margin-bottom:14px;box-shadow:var(--shadow)">
   `},
   {t:'📉 İadeler neredeyse hiçbir zaman aniden gelmez', html:`
    <div class="card"><p>Onlarla ilgili bilinmesi en faydalı şey bu. Bir aile parasını geri istediğinde, hikâye genellikle haftalardır sürüyordur — ve büyük kısmı <strong>eğitmenin gözü önünde yaşanmıştır.</strong></p></div>
    ${stepFlow([
-     {ic:'📋', label:'Ders içi çalışmalar bitirilmez olur'},
-     {ic:'🏠', label:'Ödevler teslim edilmez olur'},
+     {ic:'📋', label:'Ders içi etkinlikler tamamlanmamaya başlar.'},
+     {ic:'🏠', label:'Ödevler teslim edilmemeye başlar.'},
      {ic:'📵', label:'Dersler kaçırılmaya başlar'},
      {ic:'☎️', label:'Veli birini arar'}
    ])}
@@ -89,15 +89,15 @@ const CONTENT = {
    ${bigStat('39%→56%', `<p><strong>Kaçırılan derslerin oranı</strong> iade talebinden önceki son dönemde keskin bir şekilde artar.</p>`)}
    ${bigStat('35%→15%', `<p><strong>Ödev tamamlama oranı</strong> aynı dönemde aynı keskinlikte düşer.</p>`)}
    <p style="font-size:11.5px;color:var(--text-muted);margin-top:-4px;margin-bottom:14px">Gruplar genelindeki geçmiş verilere dayanmaktadır; kesin rakamlar bölgeye göre değişebilir.</p>
-   ${co('co-danger','🚨',`<p><strong>İşte senin için en önemli kısım.</strong></p><p>Kurstan ayrılmak üzere olan bir çocuk, verdiğin derste tamamen normal görünebilir. Çöküş, oradayken gösterdiği dikkatte değil — <strong>derse gelmekte ve çalışmaları yapmakta.</strong> Yani “derste iyi görünüyor” her şeyin yolunda olduğunun kanıtı değildir.</p>`)}
+   ${co('co-danger','🚨',`<p><strong>İşte senin için en önemli kısım.</strong></p><p>Kurstan ayrılmak üzere olan bir çocuk, verdiğin derste tamamen normal görünebilir. Asıl düşüş, çocuğun dersteki davranışlarında değil; derslere <strong>katılımında ve çalışmalarını tamamlamasında görülür..</strong> Yani “derste iyi görünüyor” her şeyin yolunda olduğunun kanıtı değildir.</p>`)}
   `},
   {t:'🦸 Bunda neden en önemli kişi sensin', html:`
    ${co('co-idea','💡',`<p><strong>Bu çocuğu, bu grupta, her hafta gören tek kişi sensin.</strong> Müşteri Hizmetleri’nde, Eğitim Operasyonları’nda ya da Deneme Dersi ekibinde hiç kimse bir çocuğun sessizleştiğini ya da denemeyi bıraktığını göremez. <strong>Sen görebilirsin.</strong> Bu eğitimin tamamı iki şeye dayanıyor: <strong>ne kadar iyi gözlemlediğin ve ne kadar hızlı harekete geçtiğin.</strong></p>`)}
    <div class="card"><div class="tbl-wrap"><table>
    <tr><th>✅ Tamamen senin</th><th>🔁 Uyum sağlamak senin — bildirmek de</th><th>🚫 Bizim kontrolümüz dışında</th></tr>
    <tr><td>Çocuk her derste motive ve desteklenmiş hissediyor</td><td><strong>Seviye çok zor ya da çok kolay.</strong> Görevi şimdi uyarla. İncelenmesi için bildir.</td><td>Sağlık</td></tr>
-   <tr><td>Her çocuk gerçek bir söz hakkı ve gerçek bir cevap alıyor</td><td><strong>Kimsenin sana söylemediği özel bir ihtiyaç.</strong> Yaklaşımını uyarla. Bildir.</td><td>Aile koşulları</td></tr>
-   <tr><td>Uzaklaşmanın ilk işaretlerini fark edip harekete geçiyorsun</td><td><strong>Kalabalık, hareketli bir grup.</strong> Öğrenilebilir bir beceri — yaklaşımını ayarla. Fark çok büyük kalırsa bildir.</td><td>Ailenin maddi durumu</td></tr>
+   <tr><td>Her çocuğa kendini ifade etme ve sorularına yanıt alma fırsatı veriliyor</td><td><strong>Daha önce sana bildirilmemiş özel bir ihtiyaç.</strong> Yaklaşımını buna göre uyarla ve durumu ilgili kişilere bildir..</td><td>Aile koşulları</td></tr>
+   <tr><td>Uzaklaşmanın ilk işaretlerini fark edip harekete geçiyorsun</td><td><strong>Kalabalık, hareketli bir grup.</strong> Öğrenilebilir bir beceri — yaklaşımını ayarla. Seviyeler arasındaki fark belirgin biçimde devam ederse durumu bildir.</td><td>Ailenin maddi durumu</td></tr>
    <tr><td>Aile, ilerlemeyi gerçek bir insanın takip ettiğini hissediyor</td><td><strong>Eğitmen/grup/program değişikliği kötü karşılandı.</strong> Şeffaf ol, hızla koordine ol.</td><td></td></tr>
    <tr><td>Ders kaçıran bir çocuk gerçekten eksiğini kapatıyor</td><td><strong>Kayıt sırasında aileye farklı bir şey söylenmiş.</strong> Dürüstçe açıkla. Bildir.</td><td></td></tr>
    </table></div></div>
@@ -106,21 +106,21 @@ const CONTENT = {
   {t:'💬 Ailelerle konuşmak: senin yaptığın ve devrettiğin kısım', html:`
    <img src="Images/Image_2.png" alt="" style="display:block;width:100%;border-radius:var(--r);margin-bottom:14px;box-shadow:var(--shadow)">
    <div class="card"><p>Veliler çocuklarının öğrenimi hakkında seninle konuşmak isteyecek — <strong>bu işinin bir parçası</strong> ve bu konuda sıcak ve ulaşılabilir olmalısın.</p>
-   <p><strong>Yapamayacağın</strong> şey ise <em>işlemin</em> kendisi: bir çocuğu başka bir gruba almak, programı, seviyeyi ya da paketi değiştirmek veya ek bir dersi onaylamak. Bunlar Müşteri Hizmetleri’nin işi — ve onlar ancak sen haber verirsen harekete geçebilir.</p></div>
-   ${co('co-idea','💡',`<p><strong>Kural: öğrenme hakkında konuş. İşlemi devret.</strong> Sen ders ile çocuğun durumunu değiştirebilecek kişiler arasındaki köprüsün — ve bir köprü ancak üzerinden bir şeyler <strong>hızla</strong> geçerse işe yarar.</p>`)}
+   <p><strong>Ancak idari</strong> işlemleri doğrudan <em>sen</em> gerçekleştiremezsin: bir çocuğu başka bir gruba almak, programı, seviyeyi ya da paketi değiştirmek veya ek bir dersi onaylamak. Bunlar Müşteri Hizmetleri’nin işi — ve onlar ancak sen haber verirsen harekete geçebilir.</p></div>
+   ${co('co-idea','💡',`<p><strong>Kural: Öğrenme sürecini konuş, idari işlemleri ilgili ekibe bırak.</strong> Sen ders ile çocuğun durumunu değiştirebilecek kişiler arasındaki köprüsün — ve bir köprü ancak üzerinden bir şeyler <strong>hızla</strong> geçerse işe yarar.</p>`)}
   `},
   {t:'🔀 Sıra önemli: önce Team Leader, sonra aile', html:`
-   <div class="card"><p>Doğru yapılması gereken bir sıra var ve bu sırayı yanlış uygulamak, iyi niyetli mesajların sorun yaratmasının tam olarak nedenidir.</p></div>
+   <div class="card"><p>İzlenmesi gereken doğru bir sıra var. Bu sıraya uyulmaması, iyi niyetle gönderilen mesajların bile sorun yaratmasına neden olabilir.</p></div>
    ${co('co-danger','🚨',`<p><strong>Durum, kendi öğretiminin ötesinde bir şeyi içerdiğinde</strong> — seviye, grup, program, özel bir ihtiyaç, tutulmamış bir söz, kaybedilmiş bir ders — <strong>önce aileye yazma.</strong></p>`)}
    ${stepFlow([
      {ic:'👩‍💼', label:'1. Team Leader’ınla koordine ol — ne gördüğünü anlat, Müşteri Hizmetleri’ni dahil et, BO’ya yorum bırak'},
-     {ic:'🧭', label:'2. Stratejide anlaşın — bu çocuk için gerçekten neyin mümkün olduğu ve neyin olmadığı'},
+     {ic:'🧭', label:'2. İzlenecek yol üzerinde anlaşın: Bu çocuk için hangi seçeneklerin gerçekten mümkün olduğunu netleştirin'},
      {ic:'👪', label:'3. Sonra aile — tam olarak Team Leader’ınla kararlaştırdığınız şey, fazlası değil'}
    ])}
    <div class="card"><p>Böylece asla tahmin yürütmek, fazla söz vermek ya da söylediğini geri almak zorunda kalmazsın.</p></div>
    ${co('co-danger','🚨',`<p><strong>Çözümleri ve seçenekleri açıklamak, koordinasyondan sonra bile senin işin değil.</strong> Team Leader’ın sana şu iki şeyden birini söyler:</p>
-   <ul><li><em>“Aileye X’i söyle”</em> → tam olarak bunu söyle, fazlasını değil</li>
-   <li><em>“Buradan sonrasını biz hallederiz”</em> → <strong>sen konunun dışında kalırsın.</strong> Bir aileye farklı tablolar çizen iki ses, güvenin tam olarak böyle kırılmasına yol açar.</li></ul>`)}
+   <ul><li><em>“Aileye X bilgisini ilet”</em> → yalnızca bu bilgiyi aktar, ek bir açıklama yapma.</li>
+   <li><em>“Buradan sonraki süreci biz yürüteceğiz”</em> → <strong>bu aşamadan sonraki iletişimi ilgili ekip sürdürecek.</strong> Bir aileye farklı tablolar çizen iki ses, güvenin tam olarak böyle kırılmasına yol açar.</li></ul>`)}
   `},
   {t:'📌 Her zaman söyleyebileceklerin ve her zaman beklemesi gerekenler', html:`
    <div class="card"><div class="tbl-wrap"><table>
@@ -134,8 +134,8 @@ const CONTENT = {
    </table></div></div>
    ${co('co-idea','💡',`<p><strong>Tek cümlede fark: sen çocuktan bahsedersin. Team Leader’ın ve Müşteri Hizmetleri ise koşullardan bahseder.</strong></p>`)}
    ${co('co-danger','⛔',`<p><strong>Asla söz verme ve asla reddetme.</strong></p><p><em>“Onu başka bir gruba alacağız”</em> değil. <em>“Bu mümkün değil”</em> de değil. İkisi de senin vereceğin kararlar değil.</p>
-   <p><strong>Ama soğuk ya da kaçamak da olma.</strong> Her zaman, hemen göstermen gereken şey, bu çocuğun rahat etmesini ve mümkün olan en iyi öğrenme deneyimini yaşamasını gerçekten istediğin — ve bunun üzerinde zaten çalıştığındır. <em>“Bunu gördüm, benim için önemli, neler yapabileceğimize bakıyorum ve size dönüş yapacağım.”</em> Bu bir söz değil. Cevap bulunurken aileyi bizimle tutan şey budur.</p>`)}
-   <div class="card"><p><strong>Öğretimin olağan işleri hakkında her zaman önceden sormadan doğrudan yazabilirsin:</strong> dersin nasıl geçtiği, çocuğun iyi yaptığı bir şey, kaçırılan bir ders ve neyin telafi edileceği, evde nasıl gittiğine dair bir soru. Bunların hepsinde ilgili ve sıcak ol — bu senin işin ve daha zor konuşmaları ileride mümkün kılan da bu.</p></div>
+   <p><strong>Ama soğuk ya da kaçamak da olma.</strong> Her zaman, hemen göstermen gereken şey, bu çocuğun rahat etmesini ve mümkün olan en iyi öğrenme deneyimini yaşamasını gerçekten istediğin — ve bunun üzerinde zaten çalıştığındır. <em>“Bunu gördüm, benim için önemli, neler yapabileceğimize bakıyorum ve size dönüş yapacağım.”</em> Bu ifade kesin bir taahhüt vermek anlamına gelmez. Ancak çözüm aranırken ailenin bize güvenmeye devam etmesini sağlar</p>`)}
+   <div class="card"><p><strong>Dersin olağan akışıyla ilgili konularda önceden onay almadan aileye doğrudan yazabilirsin:</strong> dersin nasıl geçtiği, çocuğun iyi yaptığı bir şey, kaçırılan bir ders ve neyin telafi edileceği, evde nasıl gittiğine dair bir soru. Bunların hepsinde ilgili ve sıcak ol — bu senin işin ve daha zor konuşmaları ileride mümkün kılan da bu.</p></div>
   `}
  ],
  ix:{
@@ -183,19 +183,19 @@ const CONTENT = {
 {id:'m1', numLabel:'Modül 1', emoji:'👀', color:'var(--blue)',
  title:'Erken Fark Etmeyi Öğrenmek',
  desc:'Ders sırasında ve dersler arasında neye bakman gerektiği ve hangi noktada harekete geçmen gerektiği.',
- obj:'Ders sırasında ve dersler arasında tam olarak neye bakman gerektiğini bilmek, kötü bir hafta geçiren çocukla ayrılmak üzere olan çocuğu ayırt etmek ve hangi noktada harekete geçmen gerektiğini bilmek.',
+ obj:'Ders sırasında ve dersler arasında nelere dikkat etmen gerektiğini öğrenmek, zor bir hafta geçiren çocukla kurstan ayrılma riski taşıyan çocuğu ayırt etmek ve ne zaman harekete geçmen gerektiğini belirlemek.',
  sections:[
   {t:'', html:`<div class="card"><p>Bu, eğitimdeki en önemli modül. Geri kalan her şey, durumu zamanında fark etmene bağlı.</p></div>`},
   {t:'👁️ 1.1 · Ders sırasında neyi fark etmelisin', html:`
-   <div class="card"><p>Bunlar şirkette başka hiç kimsenin göremeyeceği sinyaller. Bunları okumak için bir rapora ihtiyacın yok — sadece dikkatle bakman gerekiyor.</p></div>
+   <div class="card"><p>Bunlar şirketteki diğer ekiplerin fark edemeyebileceği işaretlerdir. Bu işaretleri fark etmek için bir rapora ihtiyacın yok; yalnızca dikkatli gözlem yapman yeterli.</p></div>
    <img src="Images/Image_4.png" alt="" style="display:block;width:100%;border-radius:var(--r);margin-bottom:14px;box-shadow:var(--shadow)">
    ${iconGrid([
-     {ic:'📷', html:`<strong>Kamera kapanıyor</strong> ve eskiden açık olmasına rağmen kapalı kalıyor. Geri çekilmenin en yaygın erken işareti — sonunda ayrılan çocuklar, grup arkadaşlarına göre kamerayı yaklaşık <strong>yarısı</strong> kadar süre açık tutuyor.`},
-     {ic:'🎤', html:`<strong>Mikrofon hiç kullanılmaz oluyor</strong> — grup arkadaşlarının mikrofon süresinin kabaca <strong>üçte biri</strong>. Konuşmayı bırakan bir çocuk genellikle kendini grubun bir parçası gibi hissetmeyi de bırakmıştır.`},
-     {ic:'💬', html:`Eskiden cümle kurduğu yerde <strong>tek kelimelik cevaplar</strong>. Eğer bu bir değişimse utangaçlık değildir — değişim bir sinyaldir.`},
+     {ic:'📷', html:`<strong>Öğrenci, daha önce kamerası</strong> açıkken artık kamerasını kapatıyor ve kapalı tutmaya devam ediyor. Bu, dersten uzaklaşmanın erken işaretlerinden biri olabilir. Sonunda kurstan ayrılan çocukların kameralarını açık tutma süresi, grup arkadaşlarınınkinden yaklaşık <strong>yarı</strong> yarıya daha kısadır.`},
+     {ic:'🎤', html:`<strong>Öğrenci ikrofonunu kullanmayı bırakıyor veya çok daha az konuşuyor.</strong> Mikrofon kullanım süresi, grup arkadaşlarınınkinin yaklaşık <strong>üçte birine düşüyo</strong>. Konuşmayı bırakan bir çocuk genellikle kendini grubun bir parçası gibi hissetmeyi de bırakmıştır.`},
+     {ic:'💬', html:`Öğrenci daha önce cümlelerle cevap verirken artık yalnızca <strong>tek kelimelik yanıtlar veriyor</strong>. Bu yeni bir davranışsa, yalnızca utangaçlık olarak değerlendirme; değişimin kendisi bir işaret olabilir`},
      {ic:'🖥️', html:`Bireysel çalışma sırasında <strong>ekranını paylaşmayı bırakıyor</strong>. Genellikle “takıldığımı görmeni istemiyorum” ya da “daha başlamadım” anlamına gelir.`},
      {ic:'📝', html:`<strong>Ders içi çalışmaya başlıyor ama hiç bitirmiyor</strong> — geride kalmanın ders içindeki en net hâli.`},
-     {ic:'✋', html:`<strong>Elini kaldırıyor ama söz verilmiyor</strong> — ve sonra el kaldırmayı bırakıyor. <strong>Bu bizim sorumluluğumuzda.</strong>`},
+     {ic:'✋', html:`<strong>Söz almak için elini kaldırıyor ancak kendisine söz verilmiyor.</strong> Bir süre sonra el kaldırmayı bırakıyor. <strong>Bu durum bizim sorumluluğumuzdadır..</strong>`},
      {ic:'⏰', html:`<strong>Geç geliyor, erken çıkıyor ya da girip çıkıp duruyor.</strong> Dikkat yerinde; bağlılık değil.`},
      {ic:'😞', html:`Bir hatadan sonra <strong>sessizleşiyor ya da hızla sinirleniyor</strong>, özellikle bu yeni bir davranışsa.`},
      {ic:'⚡', html:`<strong>İşi yarı sürede bitiriyor ve sonra dersi bölüyor.</strong> Bu da bir seviye sorunu — sıkılmak, ilgisizlikle tamamen aynı görünür.`},
@@ -227,15 +227,15 @@ const CONTENT = {
    <img src="Images/Image_6.png" alt="" style="display:block;width:100%;border-radius:var(--r);margin-bottom:14px;box-shadow:var(--shadow)">
    <div class="card"><p>Bunu net olarak anlamak önemli, çünkü konuyu ne kadar acil ele aldığını değiştirir.</p>
    <p>Çalışmalarını yapmayan bir çocuk geride kalır. Geride kalan bir çocuk derste kendini kaybolmuş hisseder. Derste kendini kaybolmuş hisseden bir çocuk gelmek istemez olur. Aile, derse gitmek istemeyen bir çocuk görür ve şu sonuca varır: <em>“ilgilenmiyor”</em> ya da <em>“bu kurs ona göre değil.”</em></p></div>
-   ${co('co-idea','💡',`<p>Bir veli bu sözleri kullandığında, <strong>teslim edilmemiş üç projeyle</strong> başlayan bir sarmalı anlatıyordur. Eksik çalışmalar yalnızca ayrılmaya çoktan karar vermiş bir çocuğun belirtisi değildir — onun bu kararı vermesine yol açan şeyin bir parçasıdır.</p>`)}
+   ${co('co-idea','💡',`<p>Bir veli bu ifadeleri kullandığında, sorunun başlangıcında <strong>teslim edilmemiş üç proje</strong> bulunuyor olabilir. Eksik çalışmalar yalnızca ayrılmaya çoktan karar vermiş bir çocuğun belirtisi değildir — onun bu kararı vermesine yol açan şeyin bir parçasıdır.</p>`)}
    ${co('co-idea','📌',`<p><strong>Yani: art arda eksik ders içi çalışma ya da ödev, tek başına harekete geçmek için bir nedendir.</strong> Göz kulak olunacak bir şey değil. Sadece kötüleşirse dile getirilecek bir şey değil. <strong>Harekete geç.</strong></p>`)}
   `},
   {t:'🧩 1.5 · Üç örüntü', html:`
    <div class="card"><p>Bir çocuğun son birkaç dersine geriye dönüp baktığında üç şekilden birini görürsün. Her biri farklı bir anlama gelir ve her biri farklı bir tepki gerektirir.</p></div>
    ${patternCards([
      {ic:'🐌', title:'Yavaş kayış', desc:'Devam ve çalışmalar birkaç ders boyunca yavaş yavaş azalıyor; eksikler giderek artıyor; kamera kapalı', note:'Klasik uzaklaşma. <strong>Tersine çevirebileceğin durum bu</strong> — ne kadar erken harekete geçersen o kadar olasıdır. → Modül 3 ve 4'},
-     {ic:'🧱', title:'Ani duruş', desc:'Normal, normal, normal — sonra hiçbir şey', note:'Bir şey oldu. Program çakışması, bir olay, evde bir durum. <strong>Sor. Varsayımda bulunma.</strong> → Modül 4'},
-     {ic:'✅', title:'Katılımcı ama yine de ayrılıyor', desc:'Derse geliyor, katılıyor, çalışmaları yapıyor — ama aile yine de ayrılmak istiyor', note:'<strong>Neden katılım değil, sen de değilsin.</strong> Daha fazla motivasyon bunu çözmez. <strong>Asıl nedeni bul ve hızla doğru yere ilet.</strong> → Modül 5 ve 6'}
+     {ic:'🧱', title:'Ani duruş', desc:'Her şey bir süre normal ilerliyor; ardından çocuk derse katılmayı veya çalışmalarını tamamlamayı aniden bırakıyor.', note:'Bir şey oldu. Program çakışması, bir olay, evde bir durum. <strong>Sor. Varsayımda bulunma.</strong> → Modül 4'},
+     {ic:'✅', title:'Katılımcı ama yine de ayrılıyor', desc:'Derse geliyor, katılıyor, çalışmaları yapıyor — ama aile yine de ayrılmak istiyor', note:'<strong>Sorun katılım eksikliği değil; senin öğretiminden kaynaklanıyor olması da gerekmiyor.</strong> Daha fazla motivasyon bunu çözmez. <strong>Asıl nedeni bul ve hızla doğru yere ilet.</strong> → Modül 5 ve 6'}
    ])}
    <div class="vslot"><div class="vslot-top"><div class="vslot-ic">🎬</div><div><div class="vslot-title">Hiç derse gelmeyen öğrenci</div></div></div>
    <div class="vslot-frame" style="padding:0;overflow:hidden"><iframe src="https://drive.google.com/file/d/1RfFI5FTMg3DBHEiJtoG9DpJyjVoHFv74/preview" width="100%" height="380" style="border:none;display:block" allow="autoplay"></iframe></div>
@@ -268,12 +268,12 @@ const CONTENT = {
 {id:'m2', numLabel:'Modül 2', emoji:'🖥️', color:'var(--blue)',
  title:'İlerleme Ekranını Okumak',
  desc:'Grubundaki bir çocuğun uzaklaşıp uzaklaşmadığını iki dakikadan kısa sürede öğren — uygulamalı olarak, bir BO simülasyonunda.',
- obj:'Grubundaki bir çocuğun uzaklaşıp uzaklaşmadığını iki dakikadan kısa sürede öğrenmek — ve yeni bir öğrenciyle ilk dersinden önce her zaman bilmen gereken iki şeyi kontrol etmek.',
+ obj:'Grubundaki bir çocuğun kurstan uzaklaşmaya başlayıp başlamadığını iki dakikadan kısa sürede belirlemek ve yeni bir öğrencinin ilk dersinden önce mutlaka kontrol etmen gereken iki temel noktayı öğrenmek.',
  sections:[
   {t:'👤 2.1 · Yeni bir öğrenciyle ilk dersinden önce — her zaman', html:`
    <div class="card"><p>Yeni bir gruba başlamadan önceki en önemli adımlardan biri — ve ileride birçok sorunu önleyebilecek bir adım — öğrencinin profilini ve Müşteri Hizmetleri yorumlarını incelemektir.</p></div>
    ${iconGrid([
-     {ic:'🎂', html:`<strong>Yaş uyumu.</strong> Çocuğun yaşının yerleştirildiği kursa uygun olup olmadığı.`},
+     {ic:'🎂', html:`<strong>Yaş uyumu.</strong> Çocuğun yaşının kayıtlı olduğu kursun yaş aralığına uygun olup olmadığı.`},
      {ic:'🎯', html:`<strong>İlgi alanları.</strong> Bu çocuğun nelerden hoşlandığı — ilk dersten itibaren örnekler ve kısa sohbetler için faydalı.`},
      {ic:'📝', html:`<strong>Velilerin ya da önceki eğitmenlerin notları.</strong> Özellikle çocuk başka bir gruptan geldiyse.`}
    ])}
@@ -284,13 +284,13 @@ const CONTENT = {
   {t:'📊 2.2 · İlerleme ekranı — haftalık 60 saniyelik taraman', html:`
    <div class="card"><p>Aşağıda İlerleme ekranının tam olarak nasıl göründüğünü görüyorsun. Ders içi çalışmaların ve ödevlerin nerede olduğunu, her rengin ne anlama geldiğini ve örüntüyü nasıl okuyacağını öğrenmek için simülasyondaki adımları takip et.</p></div>
    <div class="sim-embed"><div class="sim-embed-inner"><span class="sim-embed-tag">🖥️ BO — İlerleme</span><iframe src="Simulacion_BO_M2_Progress_TR.html" title="BO — İlerleme" loading="lazy"></iframe></div></div>
-   ${co('co-danger','🚨',`<p>Bu öğrencinin ekranının sana ne söylediğine bak: <strong>Derste</strong> güçlü, yeşil puanlar — ama <strong>Evde</strong> sütunundaki her hücre turuncu, “teslim edilmedi.” <strong>Aynı öğrenci, aynı dersler, tam tersi bir hikâye.</strong> Sen izlerken her şey yolunda; sen olmadığın anda kursun önemi kalmıyor.</p>`)}
+   ${co('co-danger','🚨',`<p>Bu öğrencinin ekranının sana ne söylediğine bak: <strong>Derste</strong> güçlü, yeşil puanlar — ama <strong>Evde</strong> sütunundaki her hücre turuncu, “teslim edilmedi.” <strong>Aynı öğrenci, aynı dersler, tam tersi bir hikâye.</strong> Çocuk ders sırasında iyi ilerliyor gibi görünüyor; ancak sen yanında olmadığında çalışmalarını tamamlamıyor.</p>`)}
    <div class="card"><h4>Bir dakikadan kısa sürede nasıl okunur</h4>
-   <ol><li><strong>Art arda gelen sıfırları ara.</strong> <strong>Art arda iki tane, harekete geçmek için yeterli.</strong> Ardışık bir seri bu ekrandaki en güçlü sinyaldir — tek bir hücreden çok daha fazla bilgi verir.</li>
-   <li><strong>Aynı çocuğun iki sekmesini karşılaştır.</strong> Derste güçlü, Evde boş → derste seninle birlikte ama evde kursun önemi kalmamış. Derste zayıf, Evde fena değil → derste bir şey işlemiyor: zorluk, tempo ya da dikkat.</li>
-   <li><strong>Çocuğu grubun geri kalanıyla karşılaştır.</strong> Aynı rakamlar, herkesin 30/50’de olmasına ya da sadece bu çocuğun öyle olmasına göre farklı anlamlar taşır.</li>
+   <ol><li><strong>Art arda gelen sıfırları ara.</strong> <strong>Ardışık iki sıfır, harekete geçmek için yeterlidir.</strong> Art arda gelen sıfırlar, tek bir sıfırdan daha güçlü bir uyarı işaretidir.</li>
+   <li><strong>Aynı çocuğun iki sekmesini karşılaştır.</strong> Derste başarılı, evde eksik → çocuk ders sırasında iyi ilerliyor ancak ödevlerini tamamlamıyor. Derste zayıf, evde daha iyi → ders sırasında seviyeden, dersin temposundan veya dikkatini toplamakta zorlanmasından kaynaklanan bir sorun olabilir..</li>
+   <li><strong>Çocuğu grubun geri kalanıyla karşılaştır.</strong> Aynı puan, grubun tamamı 30/50 alıyorsa farklı; yalnızca bu çocuk 30/50 alıyorsa farklı bir anlam taşır</li>
    <li><strong>Serinin nerede başladığına bak.</strong> Hangi derste başladı? O derste ne olduğuna geri dön — cevap genellikle oradadır.</li>
-   <li><strong>Devamı da kontrol et.</strong> Burada gördüğün, ders sırasındaki gerçek varlık değil, Back Office’e kaydedilen devamdır — bunu “derse geldi mi” diye oku, “ne kadar katılımcıydı” diye değil.</li></ol></div>
+   <li><strong>Devamı da kontrol et.</strong> Burada gördüğün bilgi, çocuğun derse gerçekten katılıp katılmadığından ziyade Back Office sistemine kaydedilen devam durumudur. Bu veriyi, çocuğun derse gelip gelmediğini anlamak için kullan; derse ne kadar aktif katıldığını değerlendirmek için deği</li></ol></div>
    ${co('co-danger','🚨',`<p><strong>Bunu haftada bir, tüm grup için yap; sadece zaten endişelendiğin çocuk için değil.</strong> Taramanın amacı, <em>henüz</em> fark etmediğin çocuğu bulmaktır.</p>`)}
    ${co('co-idea','🧭',`<p><strong>Ödevlerin ya da ders içi çalışmaların platform dışında yapıldığı bir kurs mu veriyorsun?</strong> İlerleme ekranı sana işe yarar bir şey göstermeyecek — ama eksik olan kayıttır, bilgi değil. Bunu otomatik değil, bilinçli bir şekilde yap: çocuklardan çalışmalarını ekran paylaşımıyla göstermelerini iste, bireysel çalışma sırasında sık sık kontrol et, ödevi açıkça ve sesli olarak ver ve bir sonraki derste isim vererek takip et. Aynı sinyaller, aynı eşikler — sadece onları kendin gidip toplaman gerekiyor.</p>`)}
   `}
@@ -310,16 +310,16 @@ const CONTENT = {
 {id:'m3', numLabel:'Modül 3', emoji:'🎬', color:'var(--blue)',
  title:'Derste Harekete Geçmek',
  desc:'Dersin kendisini bir müdahale aracı olarak kullan — katılım, elindeki en hızlı araç.',
- obj:'Dersin kendisini bir müdahale aracı olarak kullanmak — çünkü sanal, isteğe bağlı, okul sonrası bir derse çocuk ancak geri dönmeye değer bir şey bulduysa döner.',
+ obj:'Dersi başlı başına bir müdahale aracı olarak kullanmak — çünkü çocuklar çevrimiçi, isteğe bağlı derslere ancak kendileri için değerli bir deneyim bulduklarında geri dönerler.',
  sections:[
   {t:'🔌 3.1 · Katılım burada neden daha fazla önem taşıyor', html:`
-   <div class="card"><p>Öğrencilerimiz okulda olduğu gibi burada bulunmak zorunda değil. Evdeler, her türlü dikkat dağıtıcı bir tık uzaklarında ve gerçek bir sınıfta dikkati ayakta tutan fiziksel varlıktan yoksunlar. <strong>Her derste kurduğun bağ hoş bir ekstra değil — bir çocuğun gelecek hafta geri dönmeye karar vermesinin nedeni.</strong></p>
+   <div class="card"><p>Öğrencilerimiz okulda olduğu gibi burada bulunmak zorunda değil. Evdeler; dikkatlerini dağıtabilecek pek çok şey yalnızca bir tık uzakta ve fiziksel bir sınıf ortamının dikkati toplamaya yardımcı olan avantajlarından yoksunlar. <strong>Her derste kurduğun bağ hoş bir ekstra değil — bir çocuğun gelecek hafta geri dönmeye karar vermesinin nedeni.</strong></p>
    <p>Ve bir çocuk uzaklaşmaya başladığında, ders senin en hızlı aracındır. Dersi nasıl yürüttüğünü değiştirmek için kimsenin iznini beklemene gerek yok.</p></div>
   `},
   {t:'👋 3.2 · İlk dakikalar çok şeyi belirler', html:`
-   <div class="card"><p>Bir dersin nasıl başladığı, sonrasındaki her şeyin tonunu belirler. Derse girip selamlamadaki sıcaklığı hisseden bir çocuk, doğrudan “etkinliği açın” diye başlanan bir çocuktan bambaşka bir ruh hâlindedir.</p></div>
+   <div class="card"><p>Bir dersin nasıl başladığı, sonrasındaki her şeyin tonunu belirler. Derse sıcak bir selamlamayla başlayan çocukla doğrudan “Etkinliği açın” denilerek başlanan çocuk aynı ruh hâlinde olmaz.</p></div>
    ${doavoid(
-     ['Gerçek bir enerjiyle selamla: <em>“seni bugün gördüğüme çok sevindim”</em>','İçeriğe geçmeden önce kısa ve kişisel bir şey sor','Bugünün hedefini söyle ve bunu gerçekten kastettiğini hissettir','Kimin yokken geri geldiğini yüksek sesle fark et: <em>“seni tekrar görmek çok güzel”</em>'],
+     ['Gerçek bir enerjiyle selamla: <em>“seni bugün gördüğüme çok sevindim”</em>','İçeriğe geçmeden önce kısa ve kişisel bir şey sor','Bugünün hedefini söyle ve bunu gerçekten kastettiğini hissettir','Daha önce derse katılmayan bir çocuk geri döndüğünde bunu fark ettiğini açıkça belirt: <em>“Seni tekrar görmek çok güzel!””</em>'],
      ['Hiç selamlaşmadan doğrudan içeriğe geçmek','Başlangıçta aceleci ya da stresli görünmek','Ne yapacağını ya da nedenini açıklamamak','Geri dönen bir çocuğun fark edilmeden derse karışmasına izin vermek']
    )}
    <div class="vslot"><div class="vslot-top"><div class="vslot-ic">🎬</div><div><div class="vslot-title">Durgun bir açılış</div></div></div>
@@ -328,7 +328,7 @@ const CONTENT = {
    <div class="vslot-frame" style="padding:0;overflow:hidden"><iframe src="https://drive.google.com/file/d/1RqXcQLKBiWEhV97ZasJGIFuJhB8yU0Dh/preview" width="100%" height="380" style="border:none;display:block" allow="autoplay"></iframe></div></div>
   `},
   {t:'💬 3.3 · Sadece düzeltmek yerine motive eden geri bildirim', html:`
-   <div class="card"><p>Tekrarlanan genel bir iltifat — <em>“iyi”, “güzel”</em> — hızla etkisini kaybeder ve sessizce tam tersi bir mesaj verir: çocuğun çalışmasına gerçekten bakmadığın.</p></div>
+   <div class="card"><p>Sürekli tekrarlanan <em>“İyi”, “Güzel”</em> gibi genel övgüler hızla etkisini kaybeder. Hatta çocuğa, çalışmasını gerçekten incelemediğin mesajını verebilir.</p></div>
    ${co('co-idea','🔁',`<p><strong>Vurgula → Sor → Harekete geçir</strong></p>
    <ol><li>Çocuğun yapmaya <em>karar verdiği</em> belirli bir şeyi <strong>vurgula</strong> ve neden işe yaradığını söyle.</li>
    <li>Bunu gerçek bir merakla <strong>sor</strong>; çocuğa kendi çalışmasının uzmanı gibi davran.</li>
@@ -342,19 +342,19 @@ const CONTENT = {
    <li><strong>Dersin ortasında kimin henüz işareti olmadığını kontrol et.</strong> Sıradaki söz hakkını onlara ver.</li>
    <li>Sohbeti ve tepkileri teselli ödülü olarak değil, gerçek bir ikinci kanal olarak kullan: <em>“fikrinizi sohbete yazın, hepsini sesli okuyacağım.”</em></li>
    <li><strong>Dersi cevaplanmamış bir soruyla bitiren herkes 24 saat içinde yazılı bir cevap alır.</strong></li>
-   <li>Grup bunun aritmetik olarak mümkün olmayacağı kadar kalabalıksa, <strong>bunu Team Leader’ına söyle.</strong> Bu kişisel bir başarısızlık değil, iletilmesi gereken bir sinyaldir.</li></ul>`)}
+   <li>Grup, her çocuğa söz hakkı vermeyi pratikte imkânsız kılacak kadar kalabalıksa <strong>bunu Team Leader’ına bildir.</strong> Bu kişisel bir başarısızlık değil, iletilmesi gereken bir sinyaldir.</li></ul>`)}
    ${doavoid(
-     ['Belirli başarıları adıyla söyle: <em>“Sofia, mantığın orada gerçekten çok net olmuş”</em>','En sessiz çocukların bile katılabilmesi için sohbeti ve tepkileri kullan','Çabayı kutla: <em>“üç farklı yol denedin — bu tam bir programcı gibi düşünmek”</em>','Bireysel çalışma sırasında grup içinde dolaş, her çocuğa uğra'],
+     ['Belirli başarıları adıyla söyle: <em>“Sofia, mantığın orada gerçekten çok net olmuş”</em>','En sessiz çocukların bile katılabilmesi için sohbeti ve tepkileri kullan','Çabayı kutla: <em>“üç farklı yol denedin — bu tam bir programcı gibi düşünmek”</em>','Çocuklar bireysel çalışırken her birini sırayla kontrol et'],
      ['Tüm gruba eşit şekilde yöneltilen genel övgüler','Sadece ilk bitirene dikkat etmek','Hataları kötü bir şey gibi görmek ya da çocuklar düşünmeden cevabı vermek','Herkes için aynı tempo; bazılarını sıkmak, bazılarını telaşlandırmak']
    )}
   `},
   {t:'🧩 3.5 · Aynı tavsiye her çocukta işe yaramaz', html:`
-   <div class="card"><p>Aynı alıştırmada takılan iki çocuk senden tamamen zıt şeylere ihtiyaç duyabilir. Birkaç örüntüyü tanımak ve her biri için farklı bir hamleni hazır tutmak, sıradan bir dersi her çocuğun gerçekten orada olmak istediği bir derse dönüştürür.</p></div>
+   <div class="card"><p>Aynı alıştırmada zorlanan iki çocuk senden birbirinden tamamen farklı desteklere ihtiyaç duyabilir. Birkaç örüntüyü tanımak ve her biri için farklı bir hamleni hazır tutmak, sıradan bir dersi her çocuğun gerçekten orada olmak istediği bir derse dönüştürür.</p></div>
    ${patternCards([
-     {ic:'🙈', title:'Utangaç', desc:'Kamera açık ama nadiren konuşuyor; kısa cevaplar; asla gönüllü olmuyor; aniden söz verildiğinde içine kapanıyor', note:'Önce düşük baskılı katılım yolları — sohbet, tepkiler, bir başparmak. <strong>Doğrudan ve özel olarak</strong> davet et.'},
+     {ic:'🙈', title:'Utangaç', desc:'Kamera açık ama nadiren konuşuyor; kısa cevaplar; asla gönüllü olmuyor; aniden söz verildiğinde içine kapanıyor', note:'Önce çocuklara baskı hissettirmeyen katılım yollarını dene: sohbet üzerinden yanıt verme, tepki emojileri kullanma veya başparmak işareti gönderme. <strong>Doğrudan ve özel olarak</strong> davet et.'},
      {ic:'😣', title:'Çabuk hüsrana uğruyor', desc:'“Yapamıyorum” çabucak geliyor; ilk hatada bırakıyor; küçük hatalara gözle görülür şekilde üzülüyor', note:'Daha küçük adımlar. Hataları yüksek sesle normalleştir. Hüsran birikmeden <strong>önce</strong> durumunu sor.'},
-     {ic:'🎯', title:'Mükemmeliyetçi', desc:'Aynı şeyi tekrar tekrar yapıyor; “bitmemiş” bir şeyi teslim etmekte isteksiz', note:'Kararı ve denemeyi öv. Kusurlu bir taslak teslim etmesi için açık bir izin ver.'},
-     {ic:'⚡', title:'Çabuk sıkılıyor', desc:'Hızlı bitiriyor; bitirince başkalarının dikkatini dağıtıyor; “hepsi bu mu?”', note:'Her zaman hazır, gerçek bir ek zorluk. Ona yardımcı rolü vermeyi düşün. <strong>Asla boş oturmasına izin verme.</strong>'}
+     {ic:'🎯', title:'Mükemmeliyetçi', desc:'Aynı şeyi tekrar tekrar yapıyor; “bitmemiş” bir şeyi teslim etmekte isteksiz', note:'Kararı ve denemeyi öv. Henüz mükemmel olmayan bir taslağı teslim edebileceğini açıkça belirt.'},
+     {ic:'⚡', title:'Çabuk sıkılıyor', desc:'Hızlı bitiriyor; bitirince başkalarının dikkatini dağıtıyor; “hepsi bu mu?”', note:'Her zaman yapabileceği, gerçekten zorlayıcı ek bir görev hazır bulundur. Ona yardımcı rolü vermeyi düşün. <strong>Asla boş oturmasına izin verme.</strong>'}
    ],2)}
   `},
   {t:'🎂 3.6 · Motivasyon kaynağı yaşla değişir', html:`
@@ -367,18 +367,18 @@ const CONTENT = {
    <li>Hatalar duygusal olarak daha büyük hissettirir. Güvence hemen verilmelidir.</li>
    <li>Kendi başlarına denemeden önce daha fazla tekrara ve uygulamalı gösterime ihtiyaç duyarlar.</li></ul></div>
    <div class="card"><h4><span style="font-size:34px;vertical-align:middle;margin-right:10px;line-height:1">🧑</span>Büyük çocuklar (yaklaşık 10–14+ yaş)</h4>
-   <ul><li>Motivasyon yetkinliğe ve anlamlılığa kayar — ve bir şeyin <em>neden</em> önemli olduğunu bilmeye.</li>
+   <ul><li>Motivasyon, kişinin kendini yeterli hissetmesine ve yaptığı işin anlamını kavramasına dayanır. Bu yaş grubundaki çocuklar, bir şeyin <em>neden</em> önemli olduğunu bilmek ister.</li>
    <li>Kendilerine tepeden bakılmasına karşı hassastırlar. En önemlisi, yetenekli biri gibi görülmektir.</li>
    <li><strong>Akıl yürütmelerine ve kararlarına</strong> dair geri bildirim, sadece çabayı övmekten daha iyi karşılık bulur.</li>
    <li>Sosyal dinamikler daha önemlidir — akranları, bir soru sormayı göze alıp almayacaklarını etkiler.</li>
    <li>Daha uzun süre odaklanabilirler, ama tempo ağırlaşırsa ya da çocukça gelirse hızla koparlar.</li>
    <li>Özerklik önemlidir — bir görevi nasıl ele alacaklarına dair bir seçim sunmak karşılığını verir.</li></ul></div>
    </div>
-   ${co('co-idea','💡',`<p>Araçlar her yaşta aynıdır — sıcak bir başlangıç, belirli geri bildirim, katılım için alan. Değişen şey <strong>neyin motive edici sayıldığıdır</strong>: küçük çocukların bunun eğlenceli olduğunu ve kendilerinin önemli olduğunu hissetmeleri gerekir; büyüklerin ise zamanlarına değdiğini ve bu işte gerçekten iyi olduklarını.</p>`)}
+   ${co('co-idea','💡',`<p>Her yaş grubunda kullanılan temel yöntemler aynıdır: sıcak bir başlangıç, somut geri bildirim ve katılım fırsatları. Değişen şey <strong>neyin motive edici sayıldığıdır</strong>: küçük çocukların bunun eğlenceli olduğunu ve kendilerinin önemli olduğunu hissetmeleri gerekir; büyüklerin ise zamanlarına değdiğini ve bu işte gerçekten iyi olduklarını.</p>`)}
   `},
   {t:'🔧 3.7 · Teknoloji bozulduğunda', html:`
-   <div class="card"><p>Bir şeyler bozulacak — donan bir ekran, bağlanmayan bir mikrofon. Bunun dersi mahvedip etmeyeceğini belirleyen arıza değil; yetişkinin nasıl tepki verdiğidir.</p></div>
-   ${co('co-cute','🫂',`<p><strong>İlk hamle teknik değil, duygusaldır.</strong> Sakin tepki ver ve durumu yüksek sesle normalleştir. Sakin bir yetişkin çocuğa endişelenecek bir şey olmadığını söyler ve grup duygusal tonunu senden alır. Ancak ortam sakinleştikten sonra sorunu çözmeye geçmek anlamlıdır.</p>`)}
+   <div class="card"><p>Bir şeyler bozulacak — donan bir ekran, bağlanmayan bir mikrofon. Dersin kötü geçip geçmeyeceğini belirleyen şey teknik arızanın kendisi değil, eğitmenin bu duruma nasıl tepki verdiğidir.</p></div>
+   ${co('co-cute','🫂',`<p><strong>İlk hamle teknik değil, duygusaldır.</strong> Sakin tepki ver ve durumu yüksek sesle normalleştir. Eğitmenin sakin kalması çocuğa endişelenecek bir şey olmadığını hissettirir; gruptaki diğer çocuklar da onun tutumundan etkilenir. Ancak ortam sakinleştikten sonra sorunu çözmeye geçmek anlamlıdır.</p>`)}
   `}
  ],
  ix:{
@@ -396,10 +396,10 @@ const CONTENT = {
 {id:'m4', numLabel:'Modül 4', emoji:'📞', color:'var(--blue)',
  title:'Dersler Arasında Harekete Geçmek',
  desc:'Gerçekten işe yarayan birebir görüşme, devamsızlık takibi ve aileyi sürecin içinde tutmak.',
- obj:'Dersler arasında, uzaklaşan bir çocuğun iade talebine dönüşmesini önleyen şeyleri yapmak: birebir görüşme, devamsızlık takibi ve aileyi sürecin içinde tutmak.',
+ obj:'Dersler arasında, kurstan uzaklaşmaya başlayan bir çocuğun iade talebinde bulunma riskini azaltacak adımları atmak: birebir görüşmeler yapmak, devamsızlıkları takip etmek ve aileyi sürece dâhil etmek.',
  sections:[
   {t:'🏠 4.1 · Gerçekten işe yarayan ödev rutini', html:`
-   <div class="card"><p>Ödevler tesadüfen düzenli teslim edilmez. Her seferinde uygulanan dört küçük alışkanlık, sessizce sıfıra düşmelerini engeller.</p></div>
+   <div class="card"><p>Ödevler kendiliğinden düzenli olarak tamamlanmaz. Her hafta uygulanan dört küçük alışkanlık, ödev tamamlama oranının fark edilmeden sıfıra düşmesini önlemeye yardımcı olur.</p></div>
    ${stepFlow([
      {ic:'🗣️', label:'1. Açıkla — ne olduğunu ve neden önemli olduğunu, sesli olarak'},
      {ic:'⏰', label:'2. Hatırlat — son tarihten önce küçük bir hatırlatma'},
@@ -412,16 +412,16 @@ const CONTENT = {
      {ic:'🔦', html:`<strong>Belirt.</strong> Eksikse, bir sonraki derste bunu açıkça ve isim vererek söyle — “bazılarınız ödevini yapmamış” gibi genel bir ifadeyle değil.`},
      {ic:'📝', html:`<strong>Değerlendir.</strong> <strong>Ailenin okuyabileceği gerçek bir yorum</strong> bırak — neyin iyi yapıldığı, neyin yapılmadığı, somut bir sonraki adım. Sessiz bir onay işareti kimseye bir şey anlatmaz.`}
    ])}
-   ${co('co-idea','💡',`<p>Bu rutin her hafta, her çocuk için uygulanır — sadece zaten endişelendiğin çocuklar için değil. Ayrıca bir sıfır gördüğünde onun bir anlam taşımasını sağlayan da budur: bunun kimse açıklamadığı, hatırlatmadığı ya da fark etmediği için olmadığını bilirsin.</p>`)}
+   ${co('co-idea','💡',`<p>Bu rutin her hafta, her çocuk için uygulanır — sadece zaten endişelendiğin çocuklar için değil. Böylece bir ödev için sıfır puan gördüğünde bunun nedenini anlayabilirsin: ödevin açıklanmaması, hatırlatılmaması veya eksikliğinin fark edilmemesi gibi bir durum söz konusu değildir.</p>`)}
   `},
   {t:'☎️ 4.2 · Gerçekten işe yarayan birebir görüşme', html:`
    <div class="card"><p>Modül 1’deki sinyallerden birini fark ettiğinde atacağın adım budur. İyi yapıldığında çoğu zaman sorunu kendi başına çözer.</p></div>
    ${iconGrid([
      {ic:'🎯', html:`<strong>Fark ettiğin belirli şeyi adıyla söyle.</strong> Belirsiz bir endişe belirsiz algılanır. <em>“Son iki projeye vakit bulamadın”</em> — <em>“her şey yolunda mı?”</em> değil.`},
-     {ic:'🚧', html:`<strong>Tutumu değil, engeli sor.</strong> <em>“Seni ne engelledi?”</em> — <em>“neden çabalamıyorsun?”</em> değil. Biri cevap vermeye, diğeri savunmaya davet eder.`},
+     {ic:'🚧', html:`<strong>Çocuğun tutumunu sorgulamak yerine, onu zorlayan durumu sor.</strong> <em>“Seni ne engelledi?”</em> — <em>“neden çabalamıyorsun?”</em> değil. Biri cevap vermeye, diğeri savunmaya davet eder.`},
      {ic:'🤫', html:`<strong>Asla grubun önünde değil.</strong> Özel bir mesaj, sohbet ya da dersin son dakikasında baş başa.`}
    ])}
-   ${co('co-idea','💡',`<p>Sonra, ne olursa olsun, <strong>iki ders sonra konuyu tekrar takip et</strong>. Takip edilmeyen bir birebir görüşme çocuğa, fark ettiğini ama aslında umursamadığını öğretir.</p>`)}
+   ${co('co-idea','💡',`<p>Görüşmeden sonra, sonucu ne olursa olsun, <strong>iki ders içinde konuyu yeniden gündeme getir</strong>. Takip edilmeyen bir birebir görüşme çocuğa, fark ettiğini ama aslında umursamadığını öğretir.</p>`)}
    <div class="card"><p>Motivasyonunu kaybetmiş bir öğrenciyi geri kazanmanın yollarından biri ödev değerlendirmesidir — ve bunu <strong>nasıl</strong> yaptığımız. Aşağıdaki iki videoda birbirinden çok farklı iki durumu izle: birinde eğitmen, öğrencinin ödevini yapmadığını görmezden geliyor; diğerinde ise eğitmen öğrenciyi dinamik bir şekilde yeniden derse katıyor ve grubun bir parçası olduğunu hissettiriyor.</p></div>
    <div class="vslot"><div class="vslot-top"><div class="vslot-ic">🎬</div><div><div class="vslot-title">Motive etmeyen eğitmen</div></div></div>
    <div class="vslot-frame" style="padding:0;overflow:hidden"><iframe src="https://drive.google.com/file/d/1zwbSiLXBj9mcqhKsFKNJriwSppbcEY5B/preview" width="100%" height="380" style="border:none;display:block" allow="autoplay"></iframe></div></div>
@@ -436,11 +436,11 @@ const CONTENT = {
        '<strong>Kaydı ve önemli olan tek şeyi gönder.</strong> “Bir saatin tamamını izleyin” değil — önemli olan tek bölümü göster.'
      ]},
      {ic:'⏳', label:'Bir sonraki dersten önce', items:[
-       '<strong>Beş dakikalık birebir görüşme</strong> ya da gruba yeniden katılması için ihtiyaç duyduğu tek kavramın kısa, yazılı bir açıklaması — dersin tamamı değil, tek bir kavram.'
+       '<strong>Beş dakikalık birebir görüşme</strong> yap veya öğrencinin gruba yeniden katılabilmesi için ihtiyaç duyduğu temel kavramı kısaca yazılı olarak açıkla. Dersin tamamını değil, yalnızca o kavramı ele al.'
      ]},
      {ic:'🏫', label:'Bir sonraki derste', items:[
-       '<strong>Ona erken, kolay ve görünür bir başarı yaşat</strong>, böylece geride kalmış değil, yapabildiğini hissederek döner.',
-       '<strong>Yokluğunu fark ettiğini göster</strong> — kısaca ve sıcak bir şekilde. Özlendiğini hissetmesi tam da önemli olan şey.'
+       '<strong>Derste erken aşamada kolayca başarabileceği, görünür bir görev ver. Böylece öğrenci</strong>, geride kaldığını hissetmek yerine bir şeyi başarabildiğini hisseder.',
+       '<strong>Yokluğunu fark ettiğini göster</strong> — kısaca ve sıcak bir şekilde. Önemli olan, öğrencinin yokluğunun fark edildiğini ve kendisinin özlendiğini hissetmesidir.'
      ]},
      {ic:'🚩', label:'İki veya daha fazla ders kaçırdıysa', items:[
        '<strong>Team Leader’ına söyle ve Müşteri Hizmetleri’nin de görebilmesi için BO’ya yorum bırak.</strong> Ek bir telafi dersinin şirket içinde konuşulması için eşik budur. Konuyu sen açarsın — aileye teklif etmezsin, ama ihtimal dışı da bırakmazsın.'
@@ -449,14 +449,14 @@ const CONTENT = {
   `},
   {t:'💌 4.4 · Aileyi yanında tutmak', html:`
    <img src="Images/Image_3.png" alt="" style="display:block;width:100%;border-radius:var(--r);margin-bottom:14px;box-shadow:var(--shadow)">
-   <div class="card"><p>Ayrılan ailelerin çoğu hiç iyi bir şey duymamıştır. Kayıt sırasında bizden haber almışlar, sonra bir sorun çıkana kadar bir daha almamışlardır.</p></div>
+   <div class="card"><p>Kurstan ayrılan ailelerin çoğu, ayrılmadan önce olumlu bir geri bildirim almamıştır. Kayıt sırasında bizden haber almışlar, ancak bir sorun ortaya çıkana kadar sonrasında kendileriyle iletişim kurmamışızdır.</p></div>
    ${checkbox([
-     `<strong>İyi geçen bir dersten sonra belirli bir şey yaz.</strong> Bir kez. Uzun olması gerekmez: <em>“bugün döngüyü tek başına çözdü — bilmenizi istedim.”</em> Bu tek alışkanlık, ailenin sonrasında gelen her şeyi nasıl okuduğunu değiştirir.`,
+     `<strong>İyi geçen bir dersten sonra, çocuğun başardığı somut bir şeyi aileyle paylaş.</strong> Bir kez. Uzun olması gerekmez: <em>“bugün döngüyü tek başına çözdü — bilmenizi istedim.”</em> Bu tek alışkanlık, ailenin sonrasında gelen her şeyi nasıl okuduğunu değiştirir.`,
      `<strong>Bir çocuk bir devamsızlık ya da zorluktan sonra geri döndüğünde, aileye başarısını anlat.</strong>`,
-     `<strong>Bir konuyu şirket içinde ilettiysen, aileye ilettiğini söyle</strong> — ve yaklaşık olarak ne zaman haber alacaklarını. Bir sorundan sonraki sessizlik, sorunun kendisinden daha fazla zarar verir.`,
+     `<strong>Bir konuyu şirket içinde ilgili ekibe ilettiysen aileye bunu bildir ve</strong> ne zaman geri dönüş alabileceklerini yaklaşık olarak açıkla. Bir sorundan sonraki sessizlik, sorunun kendisinden daha fazla zarar verir.`,
      `<strong>Öğrenmeyle ilgili sorulara açık ol.</strong> Çocuğunun nasıl gittiğini konuşmak isteyen bir veli seni ulaşılabilir bulmalı.`
    ])}
-   ${co('co-danger','⛔',`<p><strong>Ve yine de: öğrenme hakkında konuş, işlemi devret.</strong> Gruplar, programlar, seviyeler, paketler, iadeler ya da ek dersler hakkında söz yok — bunları vermek de reddetmek de senin işin değil.</p>`)}
+   ${co('co-danger','⛔',`<p><strong>Ve yine de: öğrenme hakkında konuş, işlemi devret.</strong> Gruplar, programlar, seviyeler, paketler, iadeler veya ek dersler hakkında söz verme. Bu konularda karar vermek ya da talepleri reddetmek senin sorumluluğunda değil.</p>`)}
   `}
  ],
  ix:{
@@ -484,7 +484,7 @@ const CONTENT = {
 {id:'m5', numLabel:'Modül 5', emoji:'🧩', color:'var(--blue)',
  title:'Sekiz Durum',
  desc:'Aileleri gerçekten uzaklaştıran sekiz şeyin her biri için: neyi fark etmeli, ne yapmalı ve kime haber vermeli.',
- obj:'Aileleri gerçekten uzaklaştıran sekiz şeyin her biri için neyi fark etmen, derste ne yapman, ders dışında ne yapman ve kime haber vermen gerektiğini bilmek.',
+ obj:'Ailelerin kurstan ayrılmasına yol açabilecek sekiz durumun her birinde hangi işaretleri fark etmen, derste ve ders dışında ne yapman ve kime bilgi vermen gerektiğini öğrenmek.',
  sections:[
   {t:'', html:`
    <h3 class="acc-big-title">🧩 İadenin ardındaki en yaygın 8 durum</h3>
@@ -514,7 +514,7 @@ const CONTENT = {
    ${stepIconBlock('👪','Aile — dikkatle', `<p>Önce profili kontrol et (2.1); kayıtlı bir şey yoksa nazikçe sor. Öğrendiklerini BO Yorumlarına yaz.</p>${co('co-danger','⛔',`<p>Asla: <em>“yetişemiyor”</em> ya da teşhis gibi algılanabilecek herhangi bir şey söyleme. Her 2 derste bir ve her değişiklikten sonra mutlaka takip et.</p>`)}`)}
    ${co('co-idea','🔴',`<p><strong>Bu nedenle iade talebini zaten aldın mı?</strong> Doğrudan Modül 7’ye git — öğrenciyi tutma girişimi bu çocukla bir sonraki dersinde başlıyor.</p>`)}
   `)}
-  ${accItem('📐 5.4 · Çocuk, yaş ya da format uygun değil', `
+  ${accItem('📐 5.4 · Çocuğun yaşı veya ders formatı uygun değil', `
    <img src="Images/Image_9.png" alt="" style="display:block;width:100%;border-radius:var(--rsm);margin-bottom:14px;box-shadow:var(--shadow)">
    ${noticeLine(`Bir öğrenci, materyalin gerektirdiği okuma becerilerine henüz sahip olmadığı ya da dersin tamamı boyunca odaklanamadığı için zorlanıyor olabilir. Bazı durumlarda kurs, yaşının ya da mevcut seviyesinin çok üzerinde beceriler gerektirebilir. Diğer engeller arasında ailenin çevrimiçi öğrenme formatına uyum sağlamakta zorlanması ya da daha önce fark edilmemiş bir dil engeli olabilir. Bu işaretler, sorunun katılım değil, öğrencinin ihtiyaçlarıyla öğrenme ortamı arasındaki bir uyumsuzluk olduğunu gösterebilir.`)}
    ${stepIconBlock('⚡','Uyarla', `<p>Her şeyi dene — kısalt, basitleştir, daha fazla göster, daha fazla birebir ilgi ver. Sınırı bil: henüz okuma bilmeyen bir çocuğa, büyük ölçüde okumaya dayalı bir kursla öğretemezsin.</p>`)}
@@ -551,7 +551,7 @@ const CONTENT = {
    ${stepIconBlock('👪','Aile — yeni eğitmen olarak, sıcak bir dille', `<p style="font-style:italic">“Merhaba! Ben [ad], grubunuzu bundan sonra ben yürüteceğim — [çocuk] hakkındaki notları okudum, böylece tam kaldığımız yerden devam edeceğiz.”</p><p>Sadece heves — değişikliğin nedeni değil.</p>`)}
    ${co('co-idea','🔴',`<p><strong>Bu nedenle iade talebini zaten aldın mı?</strong> Doğrudan Modül 7’ye git — öğrenciyi tutma girişimi bu çocukla bir sonraki dersinde başlıyor.</p>`)}
   `)}
-  ${accItem('⚠️ 5.7 · Bizim tarafımızda bir şey aksadı', `
+  ${accItem('⚠️ 5.7 · Bizden kaynaklanan bir aksaklık yaşandı', `
    <img src="Images/Image_12.png" alt="" style="display:block;width:100%;border-radius:var(--rsm);margin-bottom:14px;box-shadow:var(--shadow)">
    <div class="card"><p>Platform arızası nedeniyle kaybedilen bir ders, bir iptal, saatin büyük kısmını alan teknik bir sorun.</p></div>
    ${co('co-danger','🚨',`<p><strong>Bir eğitmenin burada söyleyebileceği en kötü şey “bu mümkün değil” olur.</strong> Platformumuz arızalandığı için bir çocuk ders kaçırır, aile telafi dersi ister, eğitmen bunun yapılamayacağını söyler — aile güvenini kaybeder ve iade ister. <strong>Bu hiçbir zaman eğitmenin vereceği bir karar değildi.</strong> Kaçırılan ya da aksayan iki ders, çoğu bölgenin ek bir telafi dersi konuşmasını başlatmak için kullandığı eşiktir; ancak son kararı her zaman TL’n verir. Bu konuşmayı başlatmak senin işin. Sonuçlandırmak değil.</p>`)}
@@ -579,9 +579,9 @@ const CONTENT = {
    {type:'choice', prompt:'Bu durum için doğru ilk adım —', opts:['Aileye seviye değişikliği öneren bir mesaj göndermek','Görevi daha küçük adımlara bölmek ve azaltılmış, açık bir hedef vermek — bu dersten itibaren','Planlandığı gibi devam etmek; seviye senin ayarlayabileceğin bir şey değil'], correct:1, fb:'Görevi hemen kendin uyarla — seviye konuşması gerekiyorsa Team Leader’ına ve Müşteri Hizmetleri’ne gider, asla doğrudan aileye değil.'},
    {type:'choice', prompt:'“Sürenin üçte birinde bitiriyor, sonra yanındaki çocuğun dikkatini dağıtmaya başlıyor. Üç haftadır ödev yok.” — bu hangi durum?', opts:['Çalışmalar çok kolay','Özel eğitim ihtiyacı','Aile koşulları'], correct:0, fb:'Hızlı bitirmek, dersi bölmek ve hiç ödev yapmamak, çok kolay bir seviyeden kaynaklanan sıkılmadır — ilgisizlik gibi görünür ama öyle değildir.'},
    {type:'choice', prompt:'Bu durum için doğru ilk adım —', opts:['Aynı beceriye bağlı gerçek bir ek zorluğu hemen vermek ve olası bir seviye yükseltmesi olarak bildirmek','Bildirmek ve herhangi bir şeyi değiştirmeden önce seviye incelemesini beklemek','Sadece motive olmadığını varsayıp onu daha fazla cesaretlendirmek'], correct:0, fb:'Burada iki kısım da gerekli: haftalarca sıkılmasın diye hemen uyarla ve seviyenin kendisi incelensin diye hemen bildir.'},
-   {type:'choice', prompt:'“Aile deneme dersinde onun DEHB’si olduğunu söylemiş, ama bu hiçbir yere yazılmamış ve hiçbir eğitmen buna göre uyum sağlamamış.” — bu hangi durum?', opts:['Grup çok kalabalık','Özel eğitim ihtiyacı','Bizim tarafımızda bir şey aksadı'], correct:1, fb:'Bu, en sık gözden kaçan özel eğitim ihtiyacı durumunun ta kendisi — bilgi vardı, sadece derse hiç ulaşmadı.'},
+   {type:'choice', prompt:'“Aile deneme dersinde onun DEHB’si olduğunu söylemiş, ama bu hiçbir yere yazılmamış ve hiçbir eğitmen buna göre uyum sağlamamış.” — bu hangi durum?', opts:['Grup çok kalabalık','Özel eğitim ihtiyacı','Bizden kaynaklanan bir aksaklık yaşandı'], correct:1, fb:'Bu, en sık gözden kaçan özel eğitim ihtiyacı durumunun ta kendisi — bilgi vardı, sadece derse hiç ulaşmadı.'},
    {type:'choice', prompt:'Bu durum için doğru ilk adım —', opts:['Herhangi bir şeyi değiştirmeden önce resmî bir teşhis beklemek','Dersi hemen uyarlamak — daha kısa bölümler, öngörülebilir yapı, önceden haber verilen geçişler — ve Team Leader’ınla ve Müşteri Hizmetleri’yle koordine olmak, ayrıca BO’ya yorum bırakmak','Aileye çocuklarının bu formata uygun olmayabileceğini söylemek'], correct:1, fb:'Yapabildiğin her şeyi hemen kendin uyarlarsın ve bir sonraki eğitmenin ve Müşteri Hizmetleri’nin bilmesi için bunun kayda geçtiğinden de emin olursun.'},
-   {type:'choice', prompt:'“On kişilik hareketli grubumdaki iki çocuk üç derstir benimle gerçek bir etkileşim yaşamadı ve biri el kaldırmayı bıraktı.” — bu hangi durum?', opts:['Çocuk, yaş ya da format uygun değil','Grup çok kalabalık ve çocuk hiç söz hakkı alamıyor','Bize söylenen bu değildi'], correct:1, fb:'Bu açıkça bir grup yönetimi meselesi — ve listedeki doğrudan eğitmen davranışıyla ilgili tek durum.'},
+   {type:'choice', prompt:'“On kişilik hareketli grubumdaki iki çocuk üç derstir benimle gerçek bir etkileşim yaşamadı ve biri el kaldırmayı bıraktı.” — bu hangi durum?', opts:['Çocuğun yaşı veya ders formatı uygun değil','Grup çok kalabalık ve çocuk hiç söz hakkı alamıyor','Bize söylenen bu değildi'], correct:1, fb:'Bu açıkça bir grup yönetimi meselesi — ve listedeki doğrudan eğitmen davranışıyla ilgili tek durum.'},
    {type:'choice', prompt:'Bu durum için doğru ilk adım —', opts:['Grup büyüklüğünü Team Leader’ına bildirmek ve herhangi bir şeyi değiştirmeden önce bir karar beklemek','Bu gruba özel olarak dersi yürütme şeklini değiştirmek — söz haklarını takip etmek, sohbeti bilinçli kullanmak, bölümleri yeniden düzenlemek — ve yalnızca bu da yetmezse üst kademeye taşımak','Açıkça daha katılımcı oldukları için katılan çocuklara odaklanmak'], correct:1, fb:'Bu hemen uygulayabileceğin bir beceri. Gerçekten denedikten sonra fark hâlâ çok büyük olduğu için üst kademeye taşırsın — denemenin yerine değil.'},
    {type:'choice', prompt:'“Bir veli, kendilerine sekiz kişilik bir grup değil, birebir dersler olacağının söylendiğini belirtiyor.” — bu hangi durum?', opts:['Eğitmen, grup ya da program değişikliği kötü karşılandı','Bize söylenen bu değildi','Çalışmalar çok zor'], correct:1, fb:'Vaat edilenle sunulan arasındaki uyumsuzluk tam olarak “bize söylenen bu değildi” durumudur — sekiz durum arasında en hassas olanı.'},
    {type:'choice', prompt:'Bu durum için doğru ilk adım —', opts:['Grup derslerinin nasıl işlediğini ve neden pedagojik olarak değerli olduğunu açıklamak','Mesajı aldığını bildirmek, ardından düzgün bir cevap vermeden önce konuyu aynı gün Team Leader’ına ve Müşteri Hizmetleri’ne iletmek — ve ailenin sözlerini kelimesi kelimesine BO’ya kaydetmek','Karışıklık için özür dilemek ve birebir derslere geçiş olasılığını araştırmayı teklif etmek'], correct:1, fb:'Kendi başına cevap vermek — makul bir şekilde bile olsa — eğitmenlerin farkında olmadan bir şikâyeti doğrulamasının ya da sağlayamayacağımız bir şeyi ima etmesinin yoludur. Her zaman önce koordine ol.'}
@@ -591,16 +591,16 @@ const CONTENT = {
 {id:'m6', numLabel:'Modül 6', emoji:'🧭', color:'var(--blue)',
  title:'Kime Söylemeli ve Ne Kadar Hızlı',
  desc:'Yukarıdaki her şeyi gerçekten hayata geçen bir şeye dönüştür — yönlendirme haritası ve beş kural.',
- obj:'Yukarıdaki her şeyi gerçekten hayata geçen bir şeye dönüştürmek — kime ve ne kadar hızlı haber vereceğini düşünmeye gerek kalmadan bilerek.',
+ obj:'Önceki modüllerde öğrendiklerini uygulamaya geçirmek ve kime, ne zaman bilgi vermen gerektiğini tereddüt etmeden bilmek.',
  sections:[
   {t:'⏱️ 6.1 · Her şey hıza bağlı', html:`
-   <div class="card"><p>Modül 5’teki her durumun yapısı aynıdır: erken fark edilirse düzeltilebilir, geç kalınırsa pahalıya patlar. Üçüncü derste fark edilen yanlış bir seviye çözülür. Aynı yanlış seviye on beşinci derste çoktan <em>“artık ilgilenmiyor”</em> hâline gelmiştir — ve o noktada aile bize inanmayı bırakmıştır.</p></div>
-   ${co('co-idea','💡',`<p><strong>Sen ders ile çocuğun durumunu değiştirebilecek kişiler arasındaki köprüsün. Bir köprü ancak üzerinden bir şeyler hızla geçerse bir değer taşır.</strong></p>`)}
+   <div class="card"><p>Modül 5’te ele alınan her durumda aynı ilke geçerlidir: Sorun erken fark edilirse çözülebilir; müdahale gecikirse daha ciddi sonuçlara yol açabilir. Üçüncü derste fark edilen yanlış bir seviye çözülür. Aynı seviye uyumsuzluğu on beşinci derse kadar çözülmezse, sorun <em>artık ”çocuk</em> ilgisini kaybetti” şeklinde yorumlanabilir. Bu noktada aile de bize olan güvenini kaybetmiş olabilir.</p></div>
+   ${co('co-idea','💡',`<p><strong>Sen, ders süreciyle çocuğun durumunu değiştirebilecek kişiler arasında bağlantı kurarsın. Bu bağlantının etkili olabilmesi için gerekli bilgileri zamanında iletmen gerekir.</strong></p>`)}
   `},
   {t:'🗺️ 6.2 · Yönlendirme haritası', html:`
    <div class="tbl-full"><div class="card"><table>
    <tr><th>🔎 Fark ettiğin şey</th><th>① Derste</th><th>② Dersler arasında</th><th>③ Kime söylersin + BO</th><th>④ Aile</th><th>⏱️ Ne kadar hızlı</th></tr>
-   <tr><td><strong>Devam yarının altında</strong> ya da çalışmalar grubun çok altında</td><td>Gerçek bir söz hakkı ve ulaşılabilir bir başarı ver</td><td>Çocukla özel birebir görüşme</td><td>İki ders daha değişiklik olmadan geçerse Team Leader</td><td>Kısa, sıcak bir mesaj — göndermek senin işin</td><td>Aynı hafta</td></tr>
+   <tr><td><strong>Devam oranı %50’nin altında</strong> veya ödev tamamlama oranı grubun çok gerisinde</td><td>Gerçek bir söz hakkı ve ulaşılabilir bir başarı ver</td><td>Çocukla özel birebir görüşme</td><td>İki ders daha geçmesine rağmen bir iyileşme olmazsa Team Leader’ına bildir.</td><td>Kısa, sıcak bir mesaj — göndermek senin işin</td><td>Aynı hafta</td></tr>
    <tr><td><strong>İki veya daha fazla ders, hiçbir şey teslim edilmemiş</strong></td><td>Çalışmayı ekran paylaşımıyla canlı kontrol et; hedefi küçült</td><td>Birebir görüşme; bir sonraki ödevi iyice açıkla ve takip et</td><td>Devam ederse Team Leader</td><td>İlerleme hakkında mesaj — göndermek senin işin</td><td>Aynı hafta</td></tr>
    <tr><td><strong>Çalışmalar çok zor</strong></td><td>Daha küçük adımlar, azaltılmış hedef, görevi uyarla, hataları normalleştir</td><td>Eksik kavramın yazılı açıklaması</td><td><strong>Team Leader + BO’daki Eğitmen Değerlendirmesi</strong> — gerekirse bir seviye belirleme dersi talep et</td><td>Sadece TL’nin onayladığı şey. Seviye ya da seçenekler asla</td><td>Aynı hafta</td></tr>
    <tr><td><strong>Çalışmalar çok kolay</strong></td><td>Gerçek bir ek zorluk, yukarı doğru uyarlanmış görev, yardımcı rolü, asla boş bırakma</td><td>Bir üst seviyeden bir görevi hazır tut</td><td><strong>Team Leader + BO’daki Eğitmen Değerlendirmesi</strong> — gerekirse bir seviye belirleme dersi talep et</td><td>Sadece TL’nin onayladığı şey. Seviye ya da seçenekler asla</td><td>Aynı hafta</td></tr>
@@ -644,51 +644,51 @@ const CONTENT = {
  obj:'Bir iade talebi zaten iletildiğinde nelerin değiştiğini bilmek: bir sonraki dersin ne yapması gerektiği, neyi söyleyip neyi söyleyemeyeceğin ve Müşteri Hizmetleri’ne ihtiyaç duyduğu bilgileri nasıl sağlamaya devam edeceğin.',
  sections:[
   {t:'🔀 7.1 · Bir talep oluştuğunda her şey değişir', html:`
-   <div class="card"><p>Modül 1–6, bir aile parasını geri istemeden <strong>önce</strong> durumu yakalamakla ilgilidir. Bu modül, bunun zaten gerçekleştiği an içindir: <strong>bir iade talebi iletildi</strong> ve sen bilgilendirildin.</p></div>
-   ${co('co-idea','💡',`<p><strong>Talebin kendisini sen değil, Müşteri Hizmetleri Yöneticisi oluşturur.</strong> O kısım üzerinde hiçbir kontrolün yok. Hâlâ sana ait olan şey, bundan sonra derste olan her şeydir — ve bu az şey değildir.</p>`)}
-   ${co('co-danger','🚨',`<p><strong>Talebin kendisi hakkında hiçbir şey söyleme</strong> — ne çocuğa ne de aileye — Müşteri Hizmetleri senden açıkça belirli bir şey söylemeni istemedikçe. Artık senin işin ders, konuşma değil.</p>`)}
+   <div class="card"><p>Modül 1–6, aile iade talebinde bulunmadan <strong>önce</strong> risk işaretlerini fark etmeye odaklanır. Bu modül, bunun zaten gerçekleştiği an içindir: <strong>bir iade talebi iletildi</strong> ve sen bilgilendirildin.</p></div>
+   ${co('co-idea','💡',`<p><strong>İade talebini sen değil, Müşteri Hizmetleri Yöneticisi oluşturur.</strong> O kısım üzerinde hiçbir kontrolün yok. Hâlâ sana ait olan şey, bundan sonra derste olan her şeydir — ve bu az şey değildir.</p>`)}
+   ${co('co-danger','🚨',`<p><strong>Talebin kendisi hakkında hiçbir şey söyleme</strong> — ne çocuğa ne de aileye — Müşteri Hizmetleri senden açıkça belirli bir şey söylemeni istemedikçe. Artık senin sorumluluğun iade talebini konuşmak değil, ders sürecini doğru şekilde yürütmektir.</p>`)}
   `},
   {t:'🎯 7.2 · Bu çocukla bir sonraki dersin, öğrenciyi tutma girişimidir', html:`
-   <div class="card"><p>Başka bir şeyi değiştirme şansın olmayabilir. Hemen bir sonraki dersi, sonucu belirleyecek an olarak gör.</p></div>
+   <div class="card"><p>Diğer konularda değişiklik yapma şansın olmayabilir. Bu nedenle bir sonraki dersi, öğrenciyi kursta tutmak için önemli bir fırsat olarak gör.</p></div>
    ${iconGrid([
-     {ic:'🙋', html:`<strong>Ona gerçek bir söz hakkı ver.</strong> Anlamsız bir soru değil — görüldüğü ve başarılı olduğu gerçek bir an.`},
-     {ic:'🏆', html:`<strong>Erken, kolay ve görünür bir başarı planla.</strong> Dersten geride kalmış değil, yapabildiğini hissederek çıkmalı.`},
+     {ic:'🙋', html:`<strong>Öğrenciye gerçek bir söz hakkı ver.</strong> Sıradan, yüzeysel bir soru sormakla yetinme; kendisini fark edilmiş ve başarılı hissetmesini sağlayacak bir fırsat yarat.`},
+     {ic:'🏆', html:`<strong>Erken, kolay ve görünür bir başarı planla.</strong> Dersten, geride kaldığını değil, başarılı olabildiğini hissederek ayrılmalı.`},
      {ic:'👀', html:`<strong>Fark edildiğini hissettir</strong> — genel değil, belirli bir şekilde. Bu eğitimdeki her birebir görüşmedeki kuralın aynısı.`},
-     {ic:'🤐', html:`<strong>Talepten bahsetme.</strong> Bu ders o konuşmanın yeri değil, çocuk konuyu açsa bile — konuyu sıcak bir şekilde değiştir ve ders anlatmaya devam et.`}
+     {ic:'🤐', html:`<strong>İade talebinden bahsetme.</strong> Çocuk konuyu kendisi açsa bile bu ders, iade talebini konuşmak için uygun yer değildir. Konuyu nazikçe değiştir ve derse devam et.`}
    ])}
   `},
   {t:'📮 7.3 · Müşteri Hizmetleri’ni hızla bilgilendir — bu hâlâ senin işin', html:`
-   <div class="card"><p>Müşteri Hizmetleri, dersinde bulunmadan talep üzerinde çalışıyor. Senin gördüklerin — ayrıntılı ve hızlı şekilde — onların başka hiçbir yoldan edinemeyeceği bilgilerdir.</p></div>
+   <div class="card"><p>Müşteri Hizmetleri, dersine katılmadığı için senin gözlemlediğin durumları doğrudan göremeden iade talebi üzerinde çalışıyor. Senin gördüklerin — ayrıntılı ve hızlı şekilde — onların başka hiçbir yoldan edinemeyeceği bilgilerdir.</p></div>
    ${checkbox([
      'BO’da tam olarak ne gördüğünü anlatan bir yorum — tarihler, somut ayrıntılar, izlenimler değil',
      'Elinde varsa ailenin kendi sözleri, kelimesi kelimesine — başka sözcüklerle değil',
      'Müşteri Hizmetleri tekrarlamasın diye zaten uyarladığın ya da teklif ettiğin her şey',
-     'Team Leader’ın aynı gün bilgilendirilmiş olsun'
+     'Team Leader’ını da aynı gün bilgilendir'
    ])}
-   ${co('co-idea','💡',`<p>Bir talebin var olduğunu, Müşteri Hizmetleri’nin BO’daki çocuk profiline bıraktığı yorumlardan öğrenebilirsin — bir aile iade istediği anda sana haber veren otomatik bir sistem yok. Sen Müşteri Hizmetleri’ne sinyal iletirsin; onlar sana güncelleme iletmez.</p>`)}
+   ${co('co-idea','💡',`<p>Bir talebin var olduğunu, Müşteri Hizmetleri’nin BO’daki çocuk profiline bıraktığı yorumlardan öğrenebilirsin — bir aile iade istediği anda sana haber veren otomatik bir sistem yok. Sen gözlemlediğin riskleri Müşteri Hizmetleri’ne bildirirsin; ancak onlardan sana düzenli güncelleme gelmesini beklememelisin.</p>`)}
   `},
   {t:'🚧 7.4 · Neler yapabilirsin, neler yapamazsın', html:`
    <div class="card"><div class="tbl-wrap"><table>
    <tr><th>✅ Yapabilirsin</th><th>🚫 Asla yapamazsın</th></tr>
    <tr><td>Bir talepten haberdar olduğun anda BO üzerinden Müşteri Hizmetleri’ni bilgilendirmek</td><td>Bir iadenin onaylandığını teyit etmek</td></tr>
-   <tr><td>O bildirimden <strong>önce</strong> doğal bir fırsat çıkarsa somut bir şey önermek — ek bir ders, seviye kontrolü, farklı bir kurs önerisi</td><td>Herhangi bir tutarı teyit etmek ya da konuşmak</td></tr>
+   <tr><td>İade talebiyle ilgili bilgilendirme yapılmadan <strong>önce</strong> doğal bir fırsat doğarsa somut bir çözüm önermek — örneğin ek ders, seviye değerlendirmesi veya farklı bir kurs.</td><td>Herhangi bir tutarı teyit etmek ya da konuşmak</td></tr>
    <tr><td>Veliye Müşteri Hizmetleri’nin kendisine yardımcı olacağını söylemek</td><td>Talebin kendisi hakkında bunun ötesinde herhangi bir şey söylemek ya da ima etmek</td></tr>
    </table></div></div>
-   ${co('co-ok','✅',`<p><strong>Her zaman söylemesi güvenli olan mesaj:</strong> <em>“Müşteri Hizmetleri bu konuda size yardımcı olacak.”</em> Fazlası değil — senin rolün burada biter ve bu, yürütmek için gereken bilgilere sahip olmadığın bir konuşmadır.</p>`)}
+   ${co('co-ok','✅',`<p><strong>Her zaman söylemesi güvenli olan mesaj:</strong> <em>“Müşteri Hizmetleri bu konuda size yardımcı olacak.”</em> Bunun ötesinde bir açıklama yapma. Bu noktada senin sorumluluğun sona erer; çünkü iade sürecini yönetmek için gerekli bilgilere sahip değilsin.</p>`)}
   `},
   {t:'🌱 7.5 · Öğrenciyi tuttuktan sonraki 2–4 ders', html:`
-   <div class="card"><p>Talep geri çekilsin, çocuk grubunda kalsın, başka bir eğitmene geçsin ya da birebir derslere başlasın — sonraki birkaç ders, öğrenciyi tutmanın gerçekten kalıcı olup olmadığını belirler.</p></div>
+   <div class="card"><p>İade talebi geri çekilmiş, öğrenci mevcut grubunda kalmış, başka bir eğitmene geçmiş veya birebir derslere başlamış olabilir. Hangi durum söz konusu olursa olsun, sonraki birkaç ders öğrencinin kursta kalmaya devam edip etmeyeceği açısından önemlidir.</p></div>
    ${iconGrid([
      {ic:'🔁', html:`<strong>O derslerin her birinde ekstra ilgi</strong> — gerçek bir söz hakkı, belirli bir başarı, fark edilen bir devamsızlık — bu eğitimin sana öğrettiği her şey, tekrar tekrar.`},
      {ic:'📝', html:`Çocuk yeni bir eğitmene ya da formata geçiyorsa BO Yorumlarında <strong>eksiksiz bir devir notu</strong> — Modül 5.6’daki devir disiplininin aynısı.`},
-     {ic:'👋', html:`Seninle kalıyorsa <strong>sıcak bir süreklilik</strong> — “işe yaradı” rahatlamasının seni sessizce eski alışkanlıklarına döndürmesine izin verme.`}
+     {ic:'👋', html:`Öğrenci seninle devam ediyorsa aynı <strong>sıcak ve ilgili</strong> yaklaşımı sürdür. Sorunun çözüldüğünü düşünüp eski alışkanlıklarına geri dönme.`}
    ])}
   `},
   {t:'🔙 7.6 · Önleme hâlâ asıl mesele', html:`
    <div class="card"><p>Aşağıdakilerin hepsi zaten Modül 1–6’da var — bu kısa versiyon, işinin büyük kısmının bu modüle hiç ihtiyaç kalmamasını sağlamak olduğunu hatırlatmak için.</p></div>
    ${checkbox([
      'Ödevleri her hafta takip et',
-     'Dersin tam yapısını koru — grup kolay göründüğünde gevşemesine izin verme',
+     'Dersin planlanan yapısını koru — grup kolaylanmış gibi görünse bile dersin akışını gevşetme.',
      'İkiden fazla devamsızlığı ya da teknik bir sorunu gerçekleştiği anda bildir',
      'Bir risk sinyali gördüğün anda Team Leader’ına taşı',
      'Senden beklendiğinde öğrenci takip raporunu gönder'
@@ -715,10 +715,10 @@ const CONTENT = {
  sections:[
   {t:'✅ Temel noktalar, tek listede', html:`
    ${numlist([
-     'Yeni bir çocukla ilk dersimden <strong>önce</strong>, Yorumlar dahil öğrenci profilini kontrol ederim',
-     'Haftada bir, tüm grubum için İlerleme ekranını tararım — hem Derste hem Evde',
-     'Sıfırda düz bir çizgiyi nötr bir durum olarak değil, olabilecek en ciddi işaret olarak görürüm',
-     'Grubumdaki her çocuk gerçek bir söz hakkı alır ve bunu takip ettiğim için kanıtlayabilirim',
+     'Yeni bir öğrenciyle yapacağım ilk dersten <strong>önce</strong>, Yorumlar bölümü de dahil olmak üzere öğrenci profilini kontrol ederim.',
+     'Haftada bir, tüm grubumun İlerleme ekranını hem Derste hem de Evde bölümleri için kontrol ederim',
+     'Sıfırda seyreden düz bir çizgiyi nötr bir durum olarak değil, mümkün olan en ciddi uyarı işareti olarak görürüm.',
+     'Grubumdaki her öğrenciye derste söz hakkı tanırım ve bunu takip ettiğimi gösterebilirim',
      'Bir çocuk ders kaçırdığında sadece kaydı göndermem, dört adımın hepsini uygularım',
      'Gördüğüm örüntüleri tanırım ve her birine farklı tepki veririm',
      'Her zaman Team Leader’ımı bilgilendiririm, gerektiğinde Müşteri Hizmetleri’ni dahil ederim ve BO’ya yorum bırakırım',
@@ -728,9 +728,9 @@ const CONTENT = {
   `},
   {t:'🪞 Öz değerlendirme — her hafta kendine sormaya değer', html:`
    ${numlist([
-     'Bu hafta herhangi bir çocuğun ders içi çalışmasında ya da ödevinde, derslere normal şekilde katılmaya devam eden biri olsa bile, bir düşüş fark ettim mi?',
-     'Grubumda çalışmaları sıfırda olan ve sessizce fark etmeyi bıraktığım bir çocuk var mı?',
-     'Son dersimde grubumdaki her çocuk gerçek bir söz hakkı aldı mı? Emin miyim, yoksa öyle mi varsayıyorum?',
+     'Bu hafta, derslere düzenli katılmaya devam etse bile herhangi bir öğrencinin ders içi çalışmasında veya ödevlerinde düşüş fark ettim mi?',
+     'Grubumda, ilerlemesi sıfırda seyreden ve artık fark etmemeye başladığım bir öğrenci var mı?',
+     'Son dersimde grubumdaki her öğrenciye gerçekten söz hakkı verdim mi? Bundan emin miyim, yoksa yalnızca öyle olduğunu mu varsayıyorum?',
      'Fark ettiğim ama henüz kimseye söylemediğim bir şey var mı?',
      'Birine söylediğim ama hiç takip etmediğim bir şey var mı?'
    ])}
